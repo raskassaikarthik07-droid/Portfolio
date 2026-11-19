@@ -23,7 +23,7 @@
       { title: "Home / Hero", category: "Navigation", icon: "fa-solid fa-house", action: () => scrollToId('hero') },
       { title: "About Editorial", category: "Navigation", icon: "fa-solid fa-user", action: () => scrollToId('about') },
       { title: "Featured Projects", category: "Navigation", icon: "fa-solid fa-code", action: () => scrollToId('projects') },
-      { title: "Skills Universe", category: "Navigation", icon: "fa-solid fa-microchip", action: () => scrollToId('skills') },
+      { title: "Technical Skills & Stack", category: "Navigation", icon: "fa-solid fa-microchip", action: () => scrollToId('skills') },
       { title: "The Playground (Labs)", category: "Navigation", icon: "fa-solid fa-flask", action: () => scrollToId('playground') },
       { title: "Journey & Education", category: "Navigation", icon: "fa-solid fa-graduation-cap", action: () => scrollToId('journey') },
       { title: "Direct Contact", category: "Navigation", icon: "fa-solid fa-envelope", action: () => scrollToId('contact') },
