@@ -100,7 +100,7 @@ function initStaggerWaterfall() {
 }
 
 /* --------------------------------------------------------------------------
-   4. STICKY NAVBAR & ACTIVE SECTION HIGHLIGHTS
+   4. STICKY NAVBAR & ACTIVE SECTION HIGHLIGHTS (SMART HIDE/REVEAL)
    -------------------------------------------------------------------------- */
 function initNavbarBehavior() {
   const navbar = document.getElementById('main-nav');
@@ -108,16 +108,29 @@ function initNavbarBehavior() {
   const sections = document.querySelectorAll('section[id]');
 
   let ticking = false;
+  let lastScrollY = window.scrollY;
 
-  // Sticky navbar blur on scroll
+  // Sticky navbar blur and smart hide-on-scroll-down / reveal-on-scroll-up
   const handleScroll = () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        if (window.scrollY > 30) {
+        const currentY = window.scrollY;
+
+        // Frosted glass background
+        if (currentY > 30) {
           navbar.classList.add('nav-scrolled');
         } else {
           navbar.classList.remove('nav-scrolled');
         }
+
+        // Hide on scroll down, reveal on scroll up
+        if (currentY > 160 && currentY > lastScrollY) {
+          navbar.classList.add('nav-hidden');
+        } else {
+          navbar.classList.remove('nav-hidden');
+        }
+
+        lastScrollY = currentY <= 0 ? 0 : currentY;
         ticking = false;
       });
       ticking = true;
@@ -154,6 +167,16 @@ function initNavbarBehavior() {
     sections.forEach(sec => navObserver.observe(sec));
   }
 }
+
+// Global Toast Notification Helper
+window.showPortfolioToast = (msg) => {
+  const toast = document.getElementById('toast-notification');
+  const toastMessage = document.getElementById('toast-message');
+  if (!toast) return;
+  if (toastMessage) toastMessage.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4500);
+};
 
 /* --------------------------------------------------------------------------
    5. INTERACTIVE SPOTLIGHT HOVER FOR GLASSMORPHISM CARDS
