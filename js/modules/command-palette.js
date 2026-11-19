@@ -94,13 +94,13 @@
 
       searchResults.forEach((item, index) => {
         const itemEl = document.createElement('div');
-        itemEl.className = `palette-item flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer text-xs transition-all ${index === 0 ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40' : 'text-slate-300 hover:bg-slate-800/60'}`;
+        itemEl.className = `palette-item flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer text-xs transition-all ${index === 0 ? 'bg-[#A5FF50]/15 text-white border border-[#A5FF50]/50' : 'text-neutral-300 hover:bg-[#17181E]'}`;
         itemEl.innerHTML = `
           <div class="flex items-center gap-3">
-            <i class="${item.icon} text-sm w-4 text-center ${index === 0 ? 'text-cyan-400' : 'text-slate-400'}"></i>
+            <i class="${item.icon} text-sm w-4 text-center ${index === 0 ? 'text-[#A5FF50]' : 'text-neutral-400'}"></i>
             <span class="font-medium">${item.title}</span>
           </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">${item.category}</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#111218] border border-[#262833] text-neutral-400">${item.category}</span>
         `;
 
         itemEl.addEventListener('click', () => {
@@ -123,10 +123,14 @@
 
       items.forEach((el, idx) => {
         if (idx === activeIndex) {
-          el.className = 'palette-item flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer text-xs transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/40';
+          el.className = 'palette-item flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer text-xs transition-all bg-[#A5FF50]/15 text-white border border-[#A5FF50]/50';
+          const icon = el.querySelector('i');
+          if (icon) icon.className = icon.className.replace('text-neutral-400', 'text-[#A5FF50]');
           el.scrollIntoView({ block: 'nearest' });
         } else {
-          el.className = 'palette-item flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer text-xs transition-all text-slate-300 hover:bg-slate-800/60';
+          el.className = 'palette-item flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer text-xs transition-all text-neutral-300 hover:bg-[#17181E]';
+          const icon = el.querySelector('i');
+          if (icon) icon.className = icon.className.replace('text-[#A5FF50]', 'text-neutral-400');
         }
       });
     };

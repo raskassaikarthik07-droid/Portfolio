@@ -211,11 +211,9 @@ function initProjectFilters() {
 
       // Update active button state
       filterButtons.forEach(b => {
-        b.classList.remove('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-        b.classList.add('text-slate-400', 'border-transparent');
+        b.className = 'filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white transition-all duration-200';
       });
-      btn.classList.remove('text-slate-400', 'border-transparent');
-      btn.classList.add('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
+      btn.className = 'filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold bg-[#A5FF50] text-[#111111] transition-all duration-200 shadow-md shadow-[#A5FF50]/15';
 
       // Filter project cards with scale and fade transition
       projectCards.forEach(card => {

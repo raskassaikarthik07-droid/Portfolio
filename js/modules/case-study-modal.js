@@ -31,7 +31,7 @@
       const techContainer = document.getElementById('cs-tech-tags');
       if (techContainer) {
         techContainer.innerHTML = data.caseStudy.technologies.map(t => `
-          <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-slate-900 border border-slate-700/80 text-cyan-300">${t}</span>
+          <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#111218] border border-[#262833] text-neutral-200">${t}</span>
         `).join('');
       }
 
@@ -39,11 +39,11 @@
       const challengeContainer = document.getElementById('cs-challenges-list');
       if (challengeContainer) {
         challengeContainer.innerHTML = data.caseStudy.challenges.map((c, i) => `
-          <li class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-xs">
+          <li class="p-3.5 rounded-xl bg-[#111218] border border-[#262833] text-xs">
             <div class="font-semibold text-rose-300 flex items-center gap-2 mb-1">
               <i class="fa-solid fa-triangle-exclamation text-[10px]"></i> Challenge: ${c}
             </div>
-            <div class="text-emerald-300 flex items-center gap-2 pl-4 border-l border-emerald-500/40 mt-1.5">
+            <div class="text-[#A5FF50] flex items-center gap-2 pl-4 border-l border-[#A5FF50]/50 mt-1.5 font-mono">
               <i class="fa-solid fa-check text-[10px]"></i> Solution: ${data.caseStudy.solutions[i] || 'Engineered custom algorithmic solution.'}
             </div>
           </li>
@@ -88,8 +88,8 @@
 
       // Render Stage Pills
       container.innerHTML = stages.map((st, idx) => `
-        <button type="button" class="tm-stage-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${idx === activeStageIndex ? 'bg-cyan-500/25 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/20' : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-white'}" data-index="${idx}">
-          <span class="opacity-60 text-[10px] mr-1">0${idx+1}.</span> ${st.stage}
+        <button type="button" class="tm-stage-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${idx === activeStageIndex ? 'bg-[#A5FF50] text-[#111111] font-bold shadow-lg shadow-[#A5FF50]/20' : 'bg-[#111218] border border-[#262833] text-neutral-400 hover:text-white'}" data-index="${idx}">
+          <span class="opacity-70 text-[10px] mr-1">0${idx+1}.</span> ${st.stage}
         </button>
       `).join('');
 
@@ -104,14 +104,14 @@
       // Render Active Stage Detail
       const activeStage = stages[activeStageIndex];
       detailContainer.innerHTML = `
-        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 flex flex-col gap-2 transition-all duration-300">
+        <div class="p-4 rounded-xl bg-[#111218] border border-[#262833] flex flex-col gap-2 transition-all duration-300">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-cyan-400 font-semibold uppercase tracking-wider flex items-center gap-2">
+            <span class="text-xs font-mono text-[#A5FF50] font-semibold uppercase tracking-wider flex items-center gap-2">
               <i class="fa-solid fa-clock-rotate-left text-[11px]"></i> Stage 0${activeStageIndex + 1}: ${activeStage.label}
             </span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">Archived Milestone</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#17181E] border border-[#262833] text-neutral-400">Archived Milestone</span>
           </div>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${activeStage.description}</p>
+          <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">${activeStage.description}</p>
         </div>
       `;
     };

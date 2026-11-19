@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raskas Sai Karthik | Computer Science Engineer & Systems Builder</title>
-  <meta name="description" content="Portfolio of Raskas Sai Karthik - Computer Science Engineering student at KL University specializing in Distributed Systems, Computer Vision, Interactive Web Tools, and Algorithms.">
+  <meta name="description" content="Portfolio of Raskas Sai Karthik - Computer Science Engineering student at KL University (Roll No: 2510030295) specializing in Distributed Systems, Applied Computer Vision, and Interactive Tools.">
 
-  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Fira Code -->
+  <!-- Google Fonts: Space Grotesk, Manrope, Inter, Fira Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,20 +18,30 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Outfit"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            heading: ['"Manrope"', 'sans-serif'],
             mono: ['"Fira Code"', 'monospace'],
           },
           colors: {
-            brand: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              900: '#0c4a6e',
-              dark: '#070a12',
+            lime: {
+              DEFAULT: '#A5FF50',
+              accent: '#A5FF50',
+              light: '#C7FF8E',
+              dark: '#7ED826',
+              glow: 'rgba(165, 255, 80, 0.22)'
+            },
+            surface: {
+              dark: '#0D0E14',
+              charcoal: '#17181E',
+              cardDark: '#121319',
+              white: '#FFFFFF',
+              light: '#F1F1F1',
+              cardLight: '#F8F9FA',
+              borderLight: '#D5D5D5',
+              borderDark: '#262833',
+              ink: '#17181E',
+              muted: '#737373'
             }
           }
         }
@@ -42,10 +52,10 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Custom Styles with 60fps transitions & typography discipline -->
+  <!-- Custom Styles: Editorial Panels, 60fps GPU Transitions, Acid Lime Accents -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-[#070a12] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white relative min-h-screen">
+<body class="bg-[#0D0E14] text-[#F1F1F1] antialiased selection:bg-[#A5FF50] selection:text-[#111111] relative min-h-screen">
 
   <!-- =========================================================================
        1. SMOOTH PRELOADER
@@ -53,15 +63,14 @@
   <div id="preloader">
     <div class="relative flex items-center justify-center">
       <div class="loader-glow-ring"></div>
-      <span class="absolute font-mono text-xs font-semibold text-cyan-400 tracking-wider">SK</span>
+      <span class="absolute font-mono text-xs font-bold text-[#A5FF50] tracking-wider">SK</span>
     </div>
-    <p class="mt-4 font-mono text-xs text-slate-400 tracking-widest uppercase animate-pulse">Initializing Lab Environment...</p>
+    <p class="mt-4 font-mono text-xs text-neutral-400 tracking-widest uppercase animate-pulse">Initializing Environment...</p>
   </div>
 
-  <!-- Background Ambient Glow Orbs -->
-  <div class="ambient-orb w-[500px] h-[500px] bg-cyan-600/15 top-[-100px] left-[-150px]"></div>
-  <div class="ambient-orb w-[450px] h-[450px] bg-indigo-600/15 top-[40%] right-[-100px]" style="animation-delay: -5s;"></div>
-  <div class="ambient-orb w-[550px] h-[550px] bg-teal-600/10 bottom-[-100px] left-[20%]" style="animation-delay: -9s;"></div>
+  <!-- Atmospheric Framing Acid-Lime Ambient Edge Glows -->
+  <div class="ambient-glow-top"></div>
+  <div class="ambient-glow-bottom"></div>
 
   <!-- =========================================================================
        2. STICKY SMART NAVIGATION BAR
@@ -69,25 +78,27 @@
   <header id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3.5 px-6 md:px-12">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Monogram Brand Logo (Interactive Easter Egg Trigger) -->
+      <!-- Monogram Brand Logo (Easter Egg Trigger) -->
       <a href="#hero" id="brand-logo" class="flex items-center gap-3 group cursor-pointer" title="Raskas Sai Karthik (Click 5x for surprise)">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1.5px] transition-transform duration-300 group-hover:scale-105">
-          <div class="w-full h-full bg-[#0b0f19] rounded-[10px] flex items-center justify-center font-mono font-bold text-cyan-400 text-sm">
+        <div class="w-10 h-10 rounded-xl bg-[#17181E] border border-[#262833] group-hover:border-[#A5FF50] p-[2px] transition-all duration-300 group-hover:scale-105 shadow-sm">
+          <div class="w-full h-full bg-[#111218] rounded-[8px] flex items-center justify-center font-mono font-bold text-[#A5FF50] text-sm">
             SK
           </div>
         </div>
-        <span class="font-display font-bold text-lg text-white tracking-tight group-hover:text-cyan-300 transition-colors">
-          Sai Karthik<span class="text-cyan-400">.</span>
+        <span class="font-display font-bold text-lg text-white tracking-tight group-hover:text-[#A5FF50] transition-colors">
+          Sai Karthik<span class="text-[#A5FF50]">.</span>
         </span>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-7 font-medium text-xs font-mono uppercase tracking-wider text-slate-400">
+      <nav class="hidden lg:flex items-center gap-7 font-medium text-xs font-mono uppercase tracking-wider text-neutral-400">
         <a href="#hero" class="nav-link py-1">Home</a>
         <a href="#about" class="nav-link py-1">About</a>
         <a href="#projects" class="nav-link py-1">Projects</a>
         <a href="#skills" class="nav-link py-1">Skills</a>
-        <a href="#playground" class="nav-link py-1 text-cyan-400"><i class="fa-solid fa-flask mr-1 text-[10px]"></i>Playground</a>
+        <a href="#playground" class="nav-link py-1 text-white hover:text-[#A5FF50] transition-colors">
+          <i class="fa-solid fa-flask mr-1 text-[10px] text-[#A5FF50]"></i>Playground
+        </a>
         <a href="#journey" class="nav-link py-1">Journey</a>
         <a href="#contact" class="nav-link py-1">Contact</a>
       </nav>
@@ -95,65 +106,65 @@
       <!-- Action Controls (Command Palette & Terminal) -->
       <div class="hidden sm:flex items-center gap-2.5">
         <!-- Command Palette Trigger Pill -->
-        <button type="button" class="open-palette-btn px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/80 hover:border-cyan-500/50 text-slate-300 hover:text-white text-xs font-mono flex items-center gap-2 transition-all shadow-sm">
-          <i class="fa-solid fa-magnifying-glass text-cyan-400 text-[11px]"></i>
+        <button type="button" class="open-palette-btn px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-neutral-300 hover:text-white text-xs font-mono flex items-center gap-2 transition-all shadow-sm">
+          <i class="fa-solid fa-magnifying-glass text-[#A5FF50] text-[11px]"></i>
           <span class="hidden md:inline">Command</span>
-          <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-[10px] text-slate-400 border border-slate-700">⌘K</kbd>
+          <kbd class="px-1.5 py-0.5 rounded bg-[#111218] text-[10px] text-neutral-400 border border-neutral-700">⌘K</kbd>
         </button>
 
         <!-- Interactive Terminal Trigger -->
-        <button type="button" class="open-terminal-btn px-3 py-1.5 rounded-xl bg-cyan-950/40 border border-cyan-500/40 hover:bg-cyan-500/20 text-cyan-300 text-xs font-mono flex items-center gap-1.5 transition-all" title="Toggle Interactive Terminal (Ctrl + ~)">
+        <button type="button" class="open-terminal-btn px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-[#A5FF50] text-xs font-mono flex items-center gap-1.5 transition-all shadow-sm" title="Toggle Interactive Terminal (Ctrl + ~)">
           <i class="fa-solid fa-terminal text-[11px]"></i>
           <span>CLI</span>
         </button>
 
         <!-- Direct Connect CTA -->
-        <a href="#contact" class="btn-primary text-xs uppercase tracking-wider !py-1.5 !px-4 hidden lg:inline-flex">
+        <a href="#contact" class="btn-lime text-xs uppercase tracking-wider !py-2 !px-4 hidden lg:inline-flex">
           <span>Connect</span>
-          <i class="fa-solid fa-arrow-right text-[9px]"></i>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </a>
       </div>
 
       <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-2 lg:hidden">
-        <button type="button" class="open-palette-btn text-slate-300 p-2 rounded-lg" aria-label="Open Command Palette">
+        <button type="button" class="open-palette-btn text-neutral-300 p-2 rounded-lg" aria-label="Open Command Palette">
           <i class="fa-solid fa-magnifying-glass text-base"></i>
         </button>
-        <button id="mobile-menu-btn" class="text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Toggle Navigation">
+        <button id="mobile-menu-btn" class="text-neutral-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Toggle Navigation">
           <i class="fa-solid fa-bars-staggered text-xl"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden mt-3 p-5 rounded-2xl bg-[#0f172a]/95 backdrop-blur-2xl border border-slate-800 shadow-2xl transition-all duration-300">
+    <div id="mobile-menu" class="hidden lg:hidden mt-3 p-5 rounded-2xl bg-[#17181E]/95 backdrop-blur-2xl border border-[#262833] shadow-2xl transition-all duration-300">
       <div class="flex flex-col gap-3 font-medium text-sm">
-        <a href="#hero" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/60">Home</a>
-        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/60">About</a>
-        <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/60">Projects &amp; Time Machine</a>
-        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/60">Skills &amp; Technologies</a>
-        <a href="#playground" class="mobile-nav-link text-cyan-400 py-2 border-b border-slate-800/60 flex items-center justify-between">
-          <span>The Playground (Labs)</span>
-          <span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-300 font-mono">Interactive</span>
+        <a href="#hero" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800">Home</a>
+        <a href="#about" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800">About</a>
+        <a href="#projects" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800">Projects &amp; Time Machine</a>
+        <a href="#skills" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800">Skills ("Things I build with")</a>
+        <a href="#playground" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800 flex items-center justify-between">
+          <span>Playground (Curiosity Labs)</span>
+          <span class="px-2 py-0.5 rounded text-[10px] bg-[#A5FF50]/20 text-[#A5FF50] font-mono">Interactive</span>
         </a>
-        <a href="#journey" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/60">Journey Timeline</a>
-        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-2">Direct Contact</a>
-        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800/60">
+        <a href="#journey" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800">Journey Timeline</a>
+        <a href="#contact" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2">Direct Contact</a>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-neutral-800">
           <button type="button" class="open-terminal-btn btn-secondary text-xs !py-2 justify-center">
             <i class="fa-solid fa-terminal mr-1"></i> Open CLI
           </button>
-          <a href="#contact" class="btn-primary text-xs uppercase tracking-wider text-center !py-2 justify-center">Contact</a>
+          <a href="#contact" class="btn-lime text-xs uppercase tracking-wider text-center !py-2 justify-center">Contact</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- =========================================================================
-       3. HERO SECTION (EDITORIAL + COSMIC PARTICLES + CHOOSE YOUR PATH)
+       3. HERO SECTION (EDITORIAL + LINE-ART WORKSPACE ILLUSTRATION)
        ========================================================================= -->
   <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 px-6 md:px-12 overflow-hidden">
-    <!-- Cosmic Constellation Particle Canvas (Desktop & Mobile, 60fps) -->
-    <canvas id="hero-cosmic-canvas" class="absolute inset-0 pointer-events-none z-0 w-full h-full opacity-60"></canvas>
+    <!-- Ambient 60fps Particle Canvas -->
+    <canvas id="hero-cosmic-canvas" class="absolute inset-0 pointer-events-none z-0 w-full h-full opacity-50"></canvas>
 
     <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       
@@ -161,147 +172,166 @@
       <div class="lg:col-span-7 flex flex-col items-start min-w-0">
         
         <!-- Live Availability Pill -->
-        <div class="hero-reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-medium mb-5" data-hero-delay="1">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>Available for Summer Internships &bull; KL University CSE</span>
+        <div class="hero-reveal inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#17181E] border border-[#262833] text-xs font-mono font-medium mb-5 shadow-sm" data-hero-delay="1">
+          <span class="w-2 h-2 rounded-full bg-[#A5FF50] animate-ping"></span>
+          <span class="text-white">Available for Summer Internships</span>
+          <span class="text-neutral-500">&bull;</span>
+          <span class="text-[#A5FF50]">KL University CSE</span>
         </div>
 
         <!-- "Choose Your Path" Selector -->
         <div class="hero-reveal w-full mb-6" data-hero-delay="2">
-          <div class="text-[11px] font-mono text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-compass text-cyan-400"></i> Choose Perspective:
+          <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-compass text-[#A5FF50]"></i> Choose Perspective:
           </div>
           <div id="path-selector-container" class="flex flex-wrap gap-2"></div>
           <div id="path-active-summary" class="mt-2 text-xs"></div>
         </div>
 
-        <!-- Bold Headline Greeting -->
-        <h1 class="hero-reveal font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white mb-4" data-hero-delay="3">
+        <!-- Bold Display Headline -->
+        <h1 class="hero-reveal font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-white mb-5" data-hero-delay="3">
           I BUILD THINGS <br class="hidden sm:inline">
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
-            THAT MATTER.
+          <span class="text-white">THAT </span>
+          <span class="inline-block bg-[#A5FF50] text-[#111111] px-3 py-0.5 rounded-xl shadow-lg shadow-[#A5FF50]/15">
+            MATTER.
           </span>
         </h1>
 
-        <!-- Subheadline / Name -->
-        <p class="hero-reveal font-display text-xl sm:text-2xl font-semibold text-slate-300 mb-4" data-hero-delay="4">
-          Raskas Sai Karthik &mdash; <span class="text-slate-400 text-lg font-normal">Systems &amp; Software Builder</span>
-        </p>
+        <!-- Subheadline / Name & Focus -->
+        <div class="hero-reveal flex items-center flex-wrap gap-2 mb-4" data-hero-delay="4">
+          <span class="font-display text-xl sm:text-2xl font-bold text-white">Raskas Sai Karthik</span>
+          <span class="text-neutral-500">&mdash;</span>
+          <span class="text-neutral-400 text-base sm:text-lg">Computer Science Engineer &amp; Systems Builder</span>
+        </div>
 
-        <!-- Editorial Description (Exact text containment, max 65ch) -->
-        <p class="hero-reveal editorial-text text-slate-400 text-base sm:text-lg leading-relaxed mb-8" data-hero-delay="5">
-          Computer Science Engineering student at <span class="text-slate-200 font-medium">KL University, Hyderabad</span>. I craft resilient full-stack systems, computer vision telerehabilitation platforms, and educational data structure tools with uncompromising 60fps performance.
+        <!-- Editorial Description (Max 65ch measure) -->
+        <p class="hero-reveal editorial-text text-neutral-300 text-base sm:text-lg leading-relaxed mb-8" data-hero-delay="5">
+          Computer Science Engineering student at <strong class="text-white font-medium">KL University, Hyderabad</strong> (Roll No: <code class="font-mono text-[#A5FF50] bg-[#17181E] px-1.5 py-0.5 rounded border border-[#262833]">2510030295</code>). Crafting resilient full-stack systems, applied computer vision architectures, and interactive visual algorithms with 60fps performance.
         </p>
 
         <!-- Call to Action Buttons -->
         <div class="hero-reveal flex flex-wrap items-center gap-3.5 mb-10" data-hero-delay="6">
-          <a href="#projects" class="btn-primary magnetic-target text-sm">
+          <a href="#projects" class="btn-lime magnetic-target text-sm">
             <span>Explore Projects</span>
-            <i class="fa-solid fa-code text-xs"></i>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
-          <button type="button" class="open-terminal-btn btn-secondary magnetic-target text-sm">
-            <i class="fa-solid fa-terminal text-cyan-400 text-xs"></i>
+          <button type="button" class="open-terminal-btn btn-charcoal magnetic-target text-sm">
+            <i class="fa-solid fa-terminal text-[#A5FF50] text-xs"></i>
             <span>Interactive CLI</span>
           </button>
-          <a href="#contact" class="btn-secondary magnetic-target text-sm text-cyan-400 border-cyan-500/30">
-            <span>Get in Touch</span>
-            <i class="fa-solid fa-paper-plane text-xs"></i>
+          <a href="#contact" class="btn-charcoal magnetic-target text-sm text-neutral-300 hover:text-white">
+            <span>Direct Contact</span>
+            <i class="fa-solid fa-paper-plane text-xs text-[#A5FF50]"></i>
           </a>
         </div>
 
         <!-- Verified Quick Stats Row -->
-        <div class="hero-reveal grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80 w-full" data-hero-delay="7">
+        <div class="hero-reveal grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[#262833] w-full" data-hero-delay="7">
           <div class="min-w-0">
-            <div class="font-display text-2xl sm:text-3xl font-bold text-white">6<span class="text-cyan-400">+</span></div>
-            <p class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider font-mono truncate">Verified Repos</p>
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white">6<span class="text-[#A5FF50]">+</span></div>
+            <p class="text-xs text-neutral-400 mt-0.5 uppercase tracking-wider font-mono truncate">Verified Repos</p>
           </div>
           <div class="min-w-0">
-            <div class="font-display text-2xl sm:text-3xl font-bold text-white">89<span class="text-emerald-400">%</span></div>
-            <p class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider font-mono truncate">Narayana Jr College</p>
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white">89<span class="text-[#A5FF50]">%</span></div>
+            <p class="text-xs text-neutral-400 mt-0.5 uppercase tracking-wider font-mono truncate">Narayana Jr College</p>
           </div>
           <div class="min-w-0">
-            <div class="font-display text-2xl sm:text-3xl font-bold text-white">9.7<span class="text-indigo-400"> GPA</span></div>
-            <p class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider font-mono truncate">Little Flower HS</p>
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white">9.7<span class="text-white"> GPA</span></div>
+            <p class="text-xs text-neutral-400 mt-0.5 uppercase tracking-wider font-mono truncate">Little Flower HS</p>
           </div>
           <div class="min-w-0">
-            <div class="font-display text-2xl sm:text-3xl font-bold text-white">KLH<span class="text-cyan-400"> CSE</span></div>
-            <p class="text-xs text-slate-400 mt-0.5 uppercase tracking-wider font-mono truncate">Roll 2510030295</p>
+            <div class="font-display text-2xl sm:text-3xl font-bold text-white">KLH<span class="text-[#A5FF50]"> CSE</span></div>
+            <p class="text-xs text-neutral-400 mt-0.5 uppercase tracking-wider font-mono truncate">Roll 2510030295</p>
           </div>
         </div>
 
       </div>
 
-      <!-- Hero Right Column: Developer Terminal / Node Card -->
+      <!-- Hero Right Column: Custom SVG / Line-Art Illustration with Interactive Motion -->
       <div class="lg:col-span-5 flex justify-center lg:justify-end hero-reveal min-w-0" data-hero-delay="7">
-        <div class="relative w-full max-w-md">
+        <div class="relative w-full max-w-lg">
           
-          <!-- Outer Glow Backdrop -->
-          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 opacity-25 blur-2xl transition duration-500"></div>
-          
-          <!-- Glassmorphic Terminal Card -->
-          <div class="glass-card spotlight-card rounded-3xl p-6 sm:p-7 relative border border-slate-700/60 bg-[#090d18]/90">
+          <!-- Editorial Card Frame -->
+          <div class="card-charcoal p-6 sm:p-8 relative">
             
             <!-- Terminal Header -->
-            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-[#262833]">
               <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-[#111218] border border-neutral-700"></span>
+                <span class="w-3 h-3 rounded-full bg-[#111218] border border-neutral-700"></span>
+                <span class="w-3 h-3 rounded-full bg-[#A5FF50]"></span>
               </div>
-              <span class="text-[11px] text-slate-400 font-mono">karthik@klh-cse: ~</span>
-              <span class="text-[10px] text-cyan-400 font-semibold px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/80 font-mono">v2.8.0</span>
+              <span class="text-xs font-mono text-neutral-400">karthik@klh-cse: ~/workspace</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#111218] text-[#A5FF50] border border-[#262833]">v3.0.0</span>
             </div>
 
-            <!-- Terminal Session Simulation -->
-            <div class="space-y-3 font-mono text-xs">
-              <div>
-                <p class="text-slate-400"><span class="text-cyan-400">$</span> whoami</p>
-                <p class="text-emerald-300 font-semibold pl-2">"Raskas Sai Karthik" &bull; Systems &amp; Software Builder</p>
+            <!-- Custom Vector / Line-Art Illustration -->
+            <div class="relative w-full aspect-[16/11] rounded-2xl bg-[#0F1016] border border-[#262833] overflow-hidden p-4 flex flex-col justify-between">
+              
+              <!-- Subtle Background Grid -->
+              <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#A5FF50 1px, transparent 1px); background-size: 16px 16px;"></div>
+
+              <!-- Vector Code Workstation Simulation -->
+              <div class="relative z-10 space-y-2 font-mono text-[11px] sm:text-xs">
+                <div class="flex items-center gap-2 text-neutral-400">
+                  <span class="text-[#A5FF50] font-bold">&gt;</span>
+                  <span class="text-white font-medium">const engineer = new SoftwareBuilder({</span>
+                </div>
+                <div class="pl-4 text-neutral-300 space-y-1">
+                  <div>name: <span class="text-[#A5FF50]">"Raskas Sai Karthik"</span>,</div>
+                  <div>college: <span class="text-white">"KL University, Hyderabad"</span>,</div>
+                  <div>rollNumber: <span class="text-[#A5FF50]">2510030295</span>,</div>
+                  <div>languages: [<span class="text-white">"Java"</span>, <span class="text-white">"Python"</span>, <span class="text-white">"TypeScript"</span>, <span class="text-white">"C++"</span>],</div>
+                  <div>focus: <span class="text-[#A5FF50]">"Computer Vision &amp; Web Systems"</span></div>
+                </div>
+                <div class="text-neutral-400">});</div>
               </div>
 
-              <div>
-                <p class="text-slate-400"><span class="text-cyan-400">$</span> cat telemetry.json</p>
-                <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] leading-relaxed text-slate-300">
-                  <span class="text-indigo-400">{</span><br>
-                  &nbsp;&nbsp;<span class="text-cyan-300">"university"</span>: <span class="text-amber-300">"KL University Hyderabad"</span>,<br>
-                  &nbsp;&nbsp;<span class="text-cyan-300">"roll_number"</span>: <span class="text-purple-300">2510030295</span>,<br>
-                  &nbsp;&nbsp;<span class="text-cyan-300">"email"</span>: <span class="text-emerald-300">"raskas.saikarthik07@gmail.com"</span>,<br>
-                  &nbsp;&nbsp;<span class="text-cyan-300">"github"</span>: <span class="text-sky-300">"@raskassaikarthik07-droid"</span>,<br>
-                  &nbsp;&nbsp;<span class="text-cyan-300">"status"</span>: <span class="text-emerald-400">"Available for Internships"</span><br>
-                  <span class="text-indigo-400">}</span>
+              <!-- Floating Interactive Line-Art Doodles -->
+              <div class="relative z-10 pt-4 flex items-center justify-between border-t border-[#262833]">
+                <!-- Floating Doodle 1: Coffee & Energy -->
+                <div class="doodle-float-1 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] text-xs font-mono">
+                  <span class="text-[#A5FF50]">☕</span>
+                  <span class="text-neutral-300">coffee.brew()</span>
+                </div>
+
+                <!-- Floating Doodle 2: 60fps Badge -->
+                <div class="doodle-float-2 flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#A5FF50] text-[#111111] text-xs font-mono font-bold shadow-md shadow-[#A5FF50]/20">
+                  <i class="fa-solid fa-bolt text-[11px]"></i>
+                  <span>60fps Engine</span>
+                </div>
+
+                <!-- Floating Doodle 3: Git Status -->
+                <div class="hidden sm:flex doodle-float-1 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] text-xs font-mono text-neutral-300">
+                  <i class="fa-solid fa-code-commit text-[#A5FF50]"></i>
+                  <span>main [OK]</span>
                 </div>
               </div>
 
-              <!-- Quick Command Launcher & Live Node Telemetry -->
-              <div class="pt-2 flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-800/80">
-                <span class="flex items-center gap-1.5 text-emerald-400">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                  <span>Node: ONLINE</span>
-                </span>
-                <button type="button" class="open-terminal-btn text-cyan-400 hover:text-cyan-300 underline underline-offset-2 flex items-center gap-1">
-                  <span>Open Full CLI</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                </button>
+            </div>
+
+            <!-- Terminal Action Trigger Footer -->
+            <div class="mt-4 pt-4 border-t border-[#262833] flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <a href="https://github.com/raskassaikarthik07-droid" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-[#111218] border border-[#262833] hover:border-[#A5FF50] text-neutral-300 hover:text-[#A5FF50] flex items-center justify-center transition-all" aria-label="GitHub">
+                  <i class="fa-brands fa-github text-sm"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-[#111218] border border-[#262833] hover:border-[#A5FF50] text-neutral-300 hover:text-[#A5FF50] flex items-center justify-center transition-all" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin text-sm"></i>
+                </a>
+                <a href="mailto:raskas.saikarthik07@gmail.com" class="w-8 h-8 rounded-lg bg-[#111218] border border-[#262833] hover:border-[#A5FF50] text-neutral-300 hover:text-[#A5FF50] flex items-center justify-center transition-all" aria-label="Email">
+                  <i class="fa-solid fa-envelope text-xs"></i>
+                </a>
               </div>
 
-              <!-- Social Links Bar -->
-              <div class="pt-2 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <a href="https://github.com/raskassaikarthik07-droid" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 flex items-center justify-center transition-colors" aria-label="GitHub">
-                    <i class="fa-brands fa-github text-sm"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 flex items-center justify-center transition-colors" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin text-sm"></i>
-                  </a>
-                  <a href="mailto:raskas.saikarthik07@gmail.com" class="w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 flex items-center justify-center transition-colors" aria-label="Email">
-                    <i class="fa-solid fa-envelope text-xs"></i>
-                  </a>
-                </div>
-                <span class="text-[11px] font-mono text-slate-500">Ctrl + ~ for CLI</span>
-              </div>
+              <button type="button" class="open-terminal-btn text-xs font-mono text-[#A5FF50] hover:underline flex items-center gap-1.5">
+                <span>Launch Interactive Terminal</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
             </div>
 
           </div>
+
         </div>
       </div>
 
@@ -309,109 +339,94 @@
   </section>
 
   <!-- =========================================================================
-       4. ABOUT SECTION (EDITORIAL LAYOUT)
+       4. ABOUT SECTION (LAYERED EDITORIAL COMPOSITION)
        ========================================================================= -->
-  <section id="about" class="py-24 px-6 md:px-12 relative border-t border-slate-800/50">
+  <section id="about" class="py-24 px-6 md:px-12 relative border-t border-[#262833]">
     <div class="max-w-7xl mx-auto">
       
       <!-- Section Header -->
       <div class="scroll-reveal max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
-          <span class="w-2 h-[2px] bg-cyan-400"></span> 01. About Editorial
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest mb-3">
+          <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> 01. About Editorial
         </div>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           Engineering solutions with code, precision, and architectural discipline.
         </h2>
       </div>
 
-      <!-- Editorial Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <!-- Layered Editorial Composition: Varied Cards (Light, Charcoal, Acid Lime) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Story text (Max 65ch measure) -->
-        <div class="scroll-reveal lg:col-span-6 space-y-6 text-slate-300 text-base leading-relaxed editorial-text">
-          <p>
-            I am a Computer Science Engineering student at <strong class="text-white">KL University, Hyderabad</strong> (Roll No: <code class="font-mono text-cyan-400 bg-slate-900 px-1.5 py-0.5 rounded">2510030295</code>). I bridge pure algorithmic theory with production-ready software, distributed microservices, and applied computer vision.
+        <!-- Panel 1: Crisp Light Card (Introduction & Academic Profile) -->
+        <div class="scroll-reveal lg:col-span-7 card-light p-8 sm:p-10 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17181E] text-white text-xs font-mono font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#A5FF50]"></span>
+            <span>Profile &amp; Identity</span>
+          </div>
+
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-[#17181E] leading-snug">
+            Bridging algorithmic theory with high-performance production code.
+          </h3>
+
+          <p class="text-neutral-700 text-base leading-relaxed editorial-text">
+            I am a Computer Science Engineering student at <strong class="text-[#17181E]">KL University, Hyderabad</strong> (Roll No: <code class="font-mono bg-neutral-100 text-[#17181E] px-2 py-0.5 rounded border border-[#D5D5D5] font-bold">2510030295</code>). My work focuses on distributed backends, real-time computer vision kinematics, and interactive educational developer tools that eliminate cognitive friction.
           </p>
 
-          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <h4 class="font-display font-bold text-white text-base flex items-center gap-2">
-              <i class="fa-solid fa-compass-drafting text-cyan-400"></i> What I Enjoy Building:
-            </h4>
-            <ul class="text-xs text-slate-400 space-y-2 font-mono">
-              <li>&bull; <strong class="text-slate-200">Interactive Educational Visualizers:</strong> Tools like <span class="text-cyan-300">Structviz</span> that deconstruct abstract pointer mechanics and memory models into step-by-step clarity.</li>
-              <li>&bull; <strong class="text-slate-200">Applied Computer Vision:</strong> Real-time tele-rehabilitation monitoring like <span class="text-cyan-300">RehabVision</span> that computes multi-joint kinematic vectors at 30+ fps.</li>
-              <li>&bull; <strong class="text-slate-200">High-Reliability Architectures:</strong> Bespoke Java systems like <span class="text-cyan-300">Space Mission Control</span> built with handcrafted node structures.</li>
-            </ul>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-            <h4 class="font-display font-bold text-white text-base flex items-center gap-2">
-              <i class="fa-solid fa-microchip text-indigo-400"></i> Problem-Solving Philosophy:
-            </h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Every system I build follows three immutable principles: <strong>zero unnecessary bloat</strong>, <strong>rigorous container typography sizing</strong>, and <strong>hardware-accelerated 60fps responsiveness</strong>.
-            </p>
-          </div>
-
-          <div class="pt-2 flex flex-wrap gap-4">
-            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex-1 min-w-[200px]">
-              <div class="text-cyan-400 text-xl font-bold font-mono">CSE</div>
-              <div class="text-sm font-semibold text-white mt-1">Computer Science</div>
-              <div class="text-xs text-slate-400">KL University, Hyderabad</div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[#D5D5D5]">
+            <div class="p-4 rounded-xl bg-[#F8F9FA] border border-[#D5D5D5]">
+              <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider">Institution</div>
+              <div class="text-sm font-bold text-[#17181E] mt-1">KL University, Hyderabad</div>
+              <div class="text-xs text-neutral-600">B.Tech Computer Science (2025–2029)</div>
             </div>
-            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex-1 min-w-[200px]">
-              <div class="text-emerald-400 text-xl font-bold font-mono">2025 &ndash; 2029</div>
-              <div class="text-sm font-semibold text-white mt-1">B.Tech Degree</div>
-              <div class="text-xs text-slate-400">Active Academic Standing</div>
+            <div class="p-4 rounded-xl bg-[#F8F9FA] border border-[#D5D5D5]">
+              <div class="text-xs font-mono text-neutral-500 uppercase tracking-wider">Academic Standing</div>
+              <div class="text-sm font-bold text-[#17181E] mt-1">Distinction &amp; Honors</div>
+              <div class="text-xs text-neutral-600">Intermediate: 89% &bull; School: 9.7 GPA</div>
             </div>
           </div>
         </div>
 
-        <!-- Capability Highlight Cards (Staggered Waterfall) -->
-        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 stagger-group min-w-0">
+        <!-- Right Side Stack: Acid Lime & Dark Charcoal Panels -->
+        <div class="lg:col-span-5 space-y-8">
           
-          <!-- Card 1 -->
-          <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
-              <i class="fa-solid fa-code"></i>
+          <!-- Panel 2: Acid Lime Accent Card (Current Focus & Principles) -->
+          <div class="scroll-reveal card-lime p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-widest text-neutral-900 font-bold">Core Focus</span>
+              <i class="fa-solid fa-bolt text-neutral-900 text-lg"></i>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">Systems &amp; Algorithms</h3>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Proficient in Data Structures, Java OOP design, memory management, and algorithm optimization for real-world constraints.
+            <h4 class="font-display font-black text-2xl text-[#111111]">
+              Zero Bloat. 60fps Performance.
+            </h4>
+            <p class="text-neutral-900 text-sm leading-relaxed font-medium">
+              Every system I build follows strict software craftsmanship: zero unnecessary dependencies, deterministic pointer operations, and buttery-smooth user interfaces that run effortlessly across devices.
             </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono font-bold text-[#111111]">
+              <span class="px-2.5 py-1 rounded bg-black/10 border border-black/15">Distributed Systems</span>
+              <span class="px-2.5 py-1 rounded bg-black/10 border border-black/15">Applied CV</span>
+              <span class="px-2.5 py-1 rounded bg-black/10 border border-black/15">Java OOP</span>
+            </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-4">
-              <i class="fa-solid fa-database"></i>
+          <!-- Panel 3: Dark Charcoal Card (What I Enjoy Building) -->
+          <div class="scroll-reveal card-charcoal p-8 space-y-4">
+            <div class="text-xs font-mono uppercase tracking-widest text-[#A5FF50] flex items-center gap-2">
+              <i class="fa-solid fa-compass-drafting"></i> What I Enjoy Building:
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">Databases &amp; Microservices</h3>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Experience with relational schemas, polyglot storage, vector similarity embeddings, and RESTful gateway APIs.
-            </p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-xl mb-4">
-              <i class="fa-solid fa-heart-pulse"></i>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">Computer Vision &amp; AI</h3>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Real-time pose estimation, kinematic joint angle telemetry, and tele-rehabilitation monitoring interfaces.
-            </p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl mb-4">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">IoT &amp; Hardware Telemetry</h3>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Bridging digital software with physical hardware: Arduino, ESP32, sensor telemetry, and hardware debugging.
-            </p>
+            <ul class="text-xs text-neutral-300 space-y-3 font-mono">
+              <li class="flex items-start gap-2">
+                <span class="text-[#A5FF50] mt-0.5">&bull;</span>
+                <span><strong class="text-white">Educational Tooling:</strong> Visualizers like <span class="text-[#A5FF50]">Structviz</span> that render complex data structure mechanics in real time.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#A5FF50] mt-0.5">&bull;</span>
+                <span><strong class="text-white">Computer Vision:</strong> Platforms like <span class="text-[#A5FF50]">RehabVision</span> calculating kinematic vectors at 30+ fps.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#A5FF50] mt-0.5">&bull;</span>
+                <span><strong class="text-white">Robust Architectures:</strong> Systems like <span class="text-[#A5FF50]">Space Mission Control</span> with custom pure Java nodes.</span>
+              </li>
+            </ul>
           </div>
 
         </div>
@@ -422,333 +437,303 @@
   </section>
 
   <!-- =========================================================================
-       5. FEATURED PROJECTS SHOWCASE + PROJECT TIME MACHINE
+       5. FEATURED PROJECTS SECTION (VARIED CARDS: LIGHT, CHARCOAL, LIME)
        ========================================================================= -->
-  <section id="projects" class="py-24 px-6 md:px-12 relative border-t border-slate-800/50 bg-[#090d18]/40">
+  <section id="projects" class="py-24 px-6 md:px-12 relative border-t border-[#262833]">
     <div class="max-w-7xl mx-auto">
       
       <!-- Section Header -->
-      <div class="scroll-reveal max-w-3xl mb-10">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
-          <span class="w-2 h-[2px] bg-cyan-400"></span> 02. Engineering Portfolio
+      <div class="scroll-reveal max-w-3xl mb-12">
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest mb-3">
+          <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> 02. Engineering Portfolio
         </div>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Verified Projects &amp; Live Webhosts.
+          Things I've engineered.
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3 editorial-text">
-          Directly sourced from my GitHub (<a href="https://github.com/raskassaikarthik07-droid" target="_blank" class="text-cyan-400 underline underline-offset-2">@raskassaikarthik07-droid</a>). Click "View Case Study" to inspect the architectural evolution in the Project Time Machine.
+        <p class="text-neutral-400 text-sm sm:text-base mt-3 editorial-text">
+          Verified GitHub repositories and live deployments. Click any project to open its deep architectural case study and interactive Project Time Machine.
         </p>
       </div>
 
       <!-- Filter Tabs -->
       <div class="scroll-reveal flex flex-wrap gap-2 mb-12">
-        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium border border-cyan-500/40 bg-cyan-500/20 text-cyan-400 transition-all duration-200" data-filter="all">
-          All GitHub Projects
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold bg-[#A5FF50] text-[#111111] transition-all duration-200 shadow-md shadow-[#A5FF50]/15" data-filter="all">
+          All GitHub Projects (6)
         </button>
-        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium border border-transparent text-slate-400 hover:text-white transition-all duration-200" data-filter="live">
-          <i class="fa-solid fa-globe mr-1.5 text-emerald-400"></i> Live Webhosted (4)
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white transition-all duration-200" data-filter="live">
+          <i class="fa-solid fa-globe mr-1.5 text-[#A5FF50]"></i> Live Webhosted (4)
         </button>
-        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium border border-transparent text-slate-400 hover:text-white transition-all duration-200" data-filter="ai">
-          AI &amp; Vision
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white transition-all duration-200" data-filter="ai">
+          AI &amp; Computer Vision
         </button>
-        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium border border-transparent text-slate-400 hover:text-white transition-all duration-200" data-filter="java">
-          Java Systems &amp; DSA
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-mono font-medium bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white transition-all duration-200" data-filter="java">
+          Java SE &amp; Algorithms
         </button>
       </div>
 
-      <!-- Projects Grid (Staggered Waterfall, min-w-0 for safety) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+      <!-- Projects Grid (Varied Card Styles: Light, Charcoal, Lime) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
         
-        <!-- Project 1: movierecommend (Live on Vercel) -->
-        <div class="project-card stagger-child glass-card spotlight-card rounded-2xl p-6 flex flex-col justify-between min-w-0" data-category="live" data-live="true">
+        <!-- Project 1: MovieRecommend (Crisp Light Card) -->
+        <div class="project-card stagger-child card-light p-7 flex flex-col justify-between" data-category="live" data-live="true">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
+            <div class="flex items-center justify-between mb-5">
+              <span class="w-10 h-10 rounded-xl bg-neutral-100 border border-[#D5D5D5] flex items-center justify-center text-[#17181E] text-lg font-bold">
                 <i class="fa-solid fa-film"></i>
               </span>
-              <a href="https://movierecommend-pi.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-950/70 text-emerald-300 border border-emerald-500/50 hover:bg-emerald-900/60 transition-colors">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <a href="https://movierecommend-pi.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#17181E] text-white hover:bg-black transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#A5FF50] animate-ping"></span>
                 <span>Live on Vercel</span>
               </a>
             </div>
 
-            <h3 class="font-display font-bold text-xl text-white mb-2">
-              <a href="https://movierecommend-pi.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
+            <h3 class="font-display font-bold text-xl text-[#17181E] mb-2">
+              <a href="https://movierecommend-pi.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-600 transition-colors inline-flex items-center gap-2">
                 MovieRecommend Platform
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-neutral-400"></i>
               </a>
             </h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
-              AI-driven movie discovery and recommendation platform built with TypeScript and modern web architecture. Features algorithmic genre matching, search suggestions, and responsive media views.
+            <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-6">
+              AI-driven movie discovery and recommendation platform built with TypeScript and modern web architecture. Features algorithmic genre clustering and responsive media views.
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">TypeScript</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">React</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">TailwindCSS</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Vercel</span>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">TypeScript</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">React</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">Vercel Deploy</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
-              <div class="flex items-center gap-2">
-                <a href="https://movierecommend-pi.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 !py-2 !px-3 text-xs justify-center">
-                  <span>Launch App</span>
-                  <i class="fa-solid fa-rocket text-[10px]"></i>
-                </a>
-                <a href="https://github.com/raskassaikarthik07-droid/movierecommend" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-3 text-xs justify-center" aria-label="GitHub Repository">
-                  <i class="fa-brands fa-github text-sm"></i>
-                </a>
-              </div>
-              <button type="button" class="view-case-study-btn w-full py-1.5 px-3 rounded-lg text-xs font-mono text-cyan-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 transition-all text-center flex items-center justify-center gap-1.5" data-project-id="movierecommend">
-                <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> Case Study &amp; Time Machine
+            <div class="pt-4 border-t border-[#D5D5D5] flex items-center gap-2">
+              <button type="button" class="open-case-study flex-1 py-2 px-3 rounded-full bg-[#17181E] hover:bg-black text-white text-xs font-mono font-medium flex items-center justify-center gap-1.5 transition-colors" data-project="movierecommend">
+                <i class="fa-solid fa-clock-rotate-left text-[10px] text-[#A5FF50]"></i> Case Study
               </button>
+              <a href="https://movierecommend-pi.vercel.app" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-[#A5FF50] text-[#111111] text-xs font-mono font-bold flex items-center justify-center gap-1 transition-all hover:bg-[#B9FF70]" aria-label="Launch Webhost">
+                <i class="fa-solid fa-rocket text-[10px]"></i>
+              </a>
+              <a href="https://github.com/raskassaikarthik07-droid/movierecommend" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-neutral-100 border border-[#D5D5D5] text-[#17181E] hover:bg-neutral-200 text-xs flex items-center justify-center transition-colors" aria-label="GitHub Repository">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2: Structviz (Live on GitHub Pages) -->
-        <div class="project-card stagger-child glass-card spotlight-card rounded-2xl p-6 flex flex-col justify-between min-w-0" data-category="live" data-live="true">
+        <!-- Project 2: Structviz (Dark Charcoal Card) -->
+        <div class="project-card stagger-child card-charcoal p-7 flex flex-col justify-between" data-category="live" data-live="true">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg">
+            <div class="flex items-center justify-between mb-5">
+              <span class="w-10 h-10 rounded-xl bg-[#111218] border border-[#262833] flex items-center justify-center text-[#A5FF50] text-lg font-bold">
                 <i class="fa-solid fa-layer-group"></i>
               </span>
-              <a href="https://raskassaikarthik07-droid.github.io/Structviz/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-950/70 text-emerald-300 border border-emerald-500/50 hover:bg-emerald-900/60 transition-colors">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <a href="https://raskassaikarthik07-droid.github.io/Structviz/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#111218] border border-[#262833] text-white hover:border-[#A5FF50] transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#A5FF50] animate-ping"></span>
                 <span>Live Webhost</span>
               </a>
             </div>
 
             <h3 class="font-display font-bold text-xl text-white mb-2">
-              <a href="https://raskassaikarthik07-droid.github.io/Structviz/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
-                Structviz: DS Visualizer
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+              <a href="https://raskassaikarthik07-droid.github.io/Structviz/" target="_blank" rel="noopener noreferrer" class="hover:text-[#A5FF50] transition-colors inline-flex items-center gap-2">
+                Structviz (DS Visualizer)
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-neutral-500"></i>
               </a>
             </h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
-              Interactive visual learning platform designed for computer science students to master Stacks, Queues, and data structure operations with step-by-step graphic execution and 100% clarity.
+            <p class="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Interactive algorithm and data structures visualizer. Animates pointer movements, stack allocations, queue traversals, and linked list insertions at 60fps.
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">JavaScript</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">DSA Graphics</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">HTML5 Canvas</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Pages</span>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#111218] text-[#A5FF50] border border-[#262833]">JavaScript</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#111218] text-neutral-300 border border-[#262833]">HTML5 Canvas</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#111218] text-neutral-300 border border-[#262833]">GitHub Pages</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
-              <div class="flex items-center gap-2">
-                <a href="https://raskassaikarthik07-droid.github.io/Structviz/" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 !py-2 !px-3 text-xs justify-center">
-                  <span>Launch App</span>
-                  <i class="fa-solid fa-rocket text-[10px]"></i>
-                </a>
-                <a href="https://github.com/raskassaikarthik07-droid/Structviz" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-3 text-xs justify-center" aria-label="GitHub Repository">
-                  <i class="fa-brands fa-github text-sm"></i>
-                </a>
-              </div>
-              <button type="button" class="view-case-study-btn w-full py-1.5 px-3 rounded-lg text-xs font-mono text-cyan-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 transition-all text-center flex items-center justify-center gap-1.5" data-project-id="structviz">
-                <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> Case Study &amp; Time Machine
+            <div class="pt-4 border-t border-[#262833] flex items-center gap-2">
+              <button type="button" class="open-case-study flex-1 py-2 px-3 rounded-full bg-[#111218] hover:bg-neutral-900 border border-[#262833] hover:border-[#A5FF50] text-white text-xs font-mono font-medium flex items-center justify-center gap-1.5 transition-colors" data-project="structviz">
+                <i class="fa-solid fa-clock-rotate-left text-[10px] text-[#A5FF50]"></i> Case Study
               </button>
+              <a href="https://raskassaikarthik07-droid.github.io/Structviz/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-[#A5FF50] text-[#111111] text-xs font-mono font-bold flex items-center justify-center gap-1 transition-all hover:bg-[#B9FF70]" aria-label="Launch Webhost">
+                <i class="fa-solid fa-rocket text-[10px]"></i>
+              </a>
+              <a href="https://github.com/raskassaikarthik07-droid/Structviz" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-[#111218] border border-[#262833] text-neutral-300 hover:text-white text-xs flex items-center justify-center transition-colors" aria-label="GitHub Repository">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3: Rehabvision_physio (Live on GitHub Pages) -->
-        <div class="project-card stagger-child glass-card spotlight-card rounded-2xl p-6 flex flex-col justify-between min-w-0" data-category="ai" data-live="true">
+        <!-- Project 3: RehabVision Physio (Acid Lime Accent Card) -->
+        <div class="project-card stagger-child card-lime p-7 flex flex-col justify-between" data-category="ai" data-live="true">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-lg">
+            <div class="flex items-center justify-between mb-5">
+              <span class="w-10 h-10 rounded-xl bg-black/10 border border-black/20 flex items-center justify-center text-[#111111] text-lg font-bold">
                 <i class="fa-solid fa-heart-pulse"></i>
               </span>
-              <a href="https://raskassaikarthik07-droid.github.io/Rehabvision_physio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-950/70 text-emerald-300 border border-emerald-500/50 hover:bg-emerald-900/60 transition-colors">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <a href="https://raskassaikarthik07-droid.github.io/Rehabvision_physio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#111111] text-white hover:bg-neutral-900 transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#A5FF50] animate-ping"></span>
                 <span>Live Webhost</span>
               </a>
             </div>
 
-            <h3 class="font-display font-bold text-xl text-white mb-2">
-              <a href="https://raskassaikarthik07-droid.github.io/Rehabvision_physio/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
-                RehabVision AI Platform
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+            <h3 class="font-display font-black text-xl text-[#111111] mb-2">
+              <a href="https://raskassaikarthik07-droid.github.io/Rehabvision_physio/" target="_blank" rel="noopener noreferrer" class="hover:underline inline-flex items-center gap-2">
+                RehabVision Physio
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-neutral-900"></i>
               </a>
             </h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
-              AI-assisted tele-rehabilitation and movement intelligence system. Utilizes computer vision joint tracking and kinematic angle telemetry for real-time posture feedback and physiotherapist monitoring.
+            <p class="text-neutral-900 text-xs sm:text-sm leading-relaxed mb-6 font-medium">
+              Clinical tele-rehabilitation monitoring platform utilizing browser-based computer vision. Tracks joint angles, posture flexion, and repetition metrics in real time.
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">TypeScript</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Computer Vision</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Pose Models</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Pages</span>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-black/10 text-neutral-900 border border-black/15 font-bold">TypeScript</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-black/10 text-neutral-900 border border-black/15 font-bold">Computer Vision</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-black/10 text-neutral-900 border border-black/15 font-bold">Kinematics</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
-              <div class="flex items-center gap-2">
-                <a href="https://raskassaikarthik07-droid.github.io/Rehabvision_physio/" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 !py-2 !px-3 text-xs justify-center">
-                  <span>Launch App</span>
-                  <i class="fa-solid fa-rocket text-[10px]"></i>
-                </a>
-                <a href="https://github.com/raskassaikarthik07-droid/Rehabvision_physio" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-3 text-xs justify-center" aria-label="GitHub Repository">
-                  <i class="fa-brands fa-github text-sm"></i>
-                </a>
-              </div>
-              <button type="button" class="view-case-study-btn w-full py-1.5 px-3 rounded-lg text-xs font-mono text-cyan-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 transition-all text-center flex items-center justify-center gap-1.5" data-project-id="rehabvision">
-                <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> Case Study &amp; Time Machine
+            <div class="pt-4 border-t border-black/20 flex items-center gap-2">
+              <button type="button" class="open-case-study flex-1 py-2 px-3 rounded-full bg-[#111111] hover:bg-neutral-900 text-white text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-colors" data-project="rehabvision">
+                <i class="fa-solid fa-clock-rotate-left text-[10px] text-[#A5FF50]"></i> Case Study
               </button>
+              <a href="https://raskassaikarthik07-droid.github.io/Rehabvision_physio/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-white text-[#111111] text-xs font-mono font-bold flex items-center justify-center gap-1 transition-all hover:bg-neutral-100" aria-label="Launch Webhost">
+                <i class="fa-solid fa-rocket text-[10px]"></i>
+              </a>
+              <a href="https://github.com/raskassaikarthik07-droid/Rehabvision_physio" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-black/10 border border-black/20 text-[#111111] hover:bg-black/20 text-xs flex items-center justify-center transition-colors" aria-label="GitHub Repository">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4: plants (GreenLeaf Store) (Live on GitHub Pages) -->
-        <div class="project-card stagger-child glass-card spotlight-card rounded-2xl p-6 flex flex-col justify-between min-w-0" data-category="live" data-live="true">
+        <!-- Project 4: GreenLeaf Botanical Store (Crisp Light Card) -->
+        <div class="project-card stagger-child card-light p-7 flex flex-col justify-between" data-category="live" data-live="true">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
+            <div class="flex items-center justify-between mb-5">
+              <span class="w-10 h-10 rounded-xl bg-neutral-100 border border-[#D5D5D5] flex items-center justify-center text-[#17181E] text-lg font-bold">
                 <i class="fa-solid fa-seedling"></i>
               </span>
-              <a href="https://raskassaikarthik07-droid.github.io/plants/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-950/70 text-emerald-300 border border-emerald-500/50 hover:bg-emerald-900/60 transition-colors">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              <a href="https://raskassaikarthik07-droid.github.io/plants/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#17181E] text-white hover:bg-black transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#A5FF50] animate-ping"></span>
                 <span>Live Webhost</span>
               </a>
             </div>
 
-            <h3 class="font-display font-bold text-xl text-white mb-2">
-              <a href="https://raskassaikarthik07-droid.github.io/plants/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
+            <h3 class="font-display font-bold text-xl text-[#17181E] mb-2">
+              <a href="https://raskassaikarthik07-droid.github.io/plants/" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-600 transition-colors inline-flex items-center gap-2">
                 GreenLeaf Plant Store
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-neutral-400"></i>
               </a>
             </h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
-              GreenLeaf is a clean botanical plant and ceramic pot e-commerce storefront. Features dynamic cart management, curated botanical galleries, price calculations, and responsive design.
+            <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-6">
+              Modern botanical plant and lifestyle pot retail storefront. Built with custom CSS Grid architecture, interactive cart management, and mobile-first design.
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">JavaScript</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">CSS3 Grid</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">E-Commerce</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Pages</span>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">JavaScript</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">CSS3 Grid</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">E-Commerce</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
-              <div class="flex items-center gap-2">
-                <a href="https://raskassaikarthik07-droid.github.io/plants/" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 !py-2 !px-3 text-xs justify-center">
-                  <span>Launch App</span>
-                  <i class="fa-solid fa-rocket text-[10px]"></i>
-                </a>
-                <a href="https://github.com/raskassaikarthik07-droid/plants" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-3 text-xs justify-center" aria-label="GitHub Repository">
-                  <i class="fa-brands fa-github text-sm"></i>
-                </a>
-              </div>
-              <button type="button" class="view-case-study-btn w-full py-1.5 px-3 rounded-lg text-xs font-mono text-cyan-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 transition-all text-center flex items-center justify-center gap-1.5" data-project-id="plants">
-                <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> Case Study &amp; Time Machine
+            <div class="pt-4 border-t border-[#D5D5D5] flex items-center gap-2">
+              <button type="button" class="open-case-study flex-1 py-2 px-3 rounded-full bg-[#17181E] hover:bg-black text-white text-xs font-mono font-medium flex items-center justify-center gap-1.5 transition-colors" data-project="plants">
+                <i class="fa-solid fa-clock-rotate-left text-[10px] text-[#A5FF50]"></i> Case Study
               </button>
+              <a href="https://raskassaikarthik07-droid.github.io/plants/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-[#A5FF50] text-[#111111] text-xs font-mono font-bold flex items-center justify-center gap-1 transition-all hover:bg-[#B9FF70]" aria-label="Launch Webhost">
+                <i class="fa-solid fa-rocket text-[10px]"></i>
+              </a>
+              <a href="https://github.com/raskassaikarthik07-droid/plants" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-neutral-100 border border-[#D5D5D5] text-[#17181E] hover:bg-neutral-200 text-xs flex items-center justify-center transition-colors" aria-label="GitHub Repository">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 5: flight (SkyBook Commercial Platform) -->
-        <div class="project-card stagger-child glass-card spotlight-card rounded-2xl p-6 flex flex-col justify-between min-w-0" data-category="web">
+        <!-- Project 5: SkyBook Flight Booking (Dark Charcoal Card) -->
+        <div class="project-card stagger-child card-charcoal p-7 flex flex-col justify-between" data-category="live">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-lg">
+            <div class="flex items-center justify-between mb-5">
+              <span class="w-10 h-10 rounded-xl bg-[#111218] border border-[#262833] flex items-center justify-center text-[#A5FF50] text-lg font-bold">
                 <i class="fa-solid fa-plane-departure"></i>
               </span>
-              <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-sky-950/60 text-sky-300 border border-sky-800 hover:bg-sky-900/60 transition-colors">
+              <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#111218] border border-[#262833] text-neutral-300 hover:text-white transition-colors">
                 <i class="fa-brands fa-github text-xs"></i>
                 <span>Repository</span>
               </a>
             </div>
 
             <h3 class="font-display font-bold text-xl text-white mb-2">
-              <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
+              <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="hover:text-[#A5FF50] transition-colors inline-flex items-center gap-2">
                 SkyBook Flight Booking
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-neutral-500"></i>
               </a>
             </h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
-              Commercial-grade flight booking web application powered by React 19, Tailwind CSS v4, and Amadeus API flight search. Includes interactive aircraft seat maps and digital boarding pass export.
+            <p class="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6">
+              Commercial-grade flight booking web app powered by React 19, Tailwind CSS v4, and Amadeus API flight search. Includes aircraft seat maps and boarding pass export.
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">React 19</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Tailwind v4</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Amadeus API</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Framer</span>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#111218] text-[#A5FF50] border border-[#262833]">React 19</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#111218] text-neutral-300 border border-[#262833]">Tailwind v4</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#111218] text-neutral-300 border border-[#262833]">Amadeus API</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
-              <div class="flex items-center gap-2">
-                <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 !py-2 !px-3 text-xs justify-center">
-                  <span>View Source</span>
-                  <i class="fa-solid fa-code text-[10px]"></i>
-                </a>
-                <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-3 text-xs justify-center" aria-label="GitHub Repository">
-                  <i class="fa-brands fa-github text-sm"></i>
-                </a>
-              </div>
-              <button type="button" class="view-case-study-btn w-full py-1.5 px-3 rounded-lg text-xs font-mono text-cyan-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 transition-all text-center flex items-center justify-center gap-1.5" data-project-id="flight">
-                <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> Case Study &amp; Time Machine
+            <div class="pt-4 border-t border-[#262833] flex items-center gap-2">
+              <button type="button" class="open-case-study flex-1 py-2 px-3 rounded-full bg-[#111218] hover:bg-neutral-900 border border-[#262833] hover:border-[#A5FF50] text-white text-xs font-mono font-medium flex items-center justify-center gap-1.5 transition-colors" data-project="flight">
+                <i class="fa-solid fa-clock-rotate-left text-[10px] text-[#A5FF50]"></i> Case Study
               </button>
+              <a href="https://github.com/raskassaikarthik07-droid/flight" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-[#111218] border border-[#262833] text-neutral-300 hover:text-white text-xs flex items-center justify-center transition-colors" aria-label="GitHub Repository">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 6: Space-mission-control (Java DSA Architecture) -->
-        <div class="project-card stagger-child glass-card spotlight-card rounded-2xl p-6 flex flex-col justify-between min-w-0" data-category="java">
+        <!-- Project 6: Space Mission Control (Crisp Light Card) -->
+        <div class="project-card stagger-child card-light p-7 flex flex-col justify-between" data-category="java">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg">
+            <div class="flex items-center justify-between mb-5">
+              <span class="w-10 h-10 rounded-xl bg-neutral-100 border border-[#D5D5D5] flex items-center justify-center text-[#17181E] text-lg font-bold">
                 <i class="fa-solid fa-shuttle-space"></i>
               </span>
-              <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono bg-indigo-950/60 text-indigo-300 border border-indigo-800 hover:bg-indigo-900/60 transition-colors">
-                <i class="fa-brands fa-java text-xs text-orange-400"></i>
+              <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#17181E] text-white hover:bg-black transition-colors">
+                <i class="fa-brands fa-java text-xs text-[#A5FF50]"></i>
                 <span>Java Core</span>
               </a>
             </div>
 
-            <h3 class="font-display font-bold text-xl text-white mb-2">
-              <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2">
+            <h3 class="font-display font-bold text-xl text-[#17181E] mb-2">
+              <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-600 transition-colors inline-flex items-center gap-2">
                 Space Mission Control
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-neutral-400"></i>
               </a>
             </h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
-              Java mission management architecture implementing custom Linked Lists (CrewList), Emergency Stacks, and priority Mission Queues for astronaut flight crew telemetry and contingency dispatch.
+            <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-6">
+              Java mission management architecture implementing custom Linked Lists (CrewList), Emergency Stacks, and priority Mission Queues for astronaut flight crew telemetry.
             </p>
           </div>
 
           <div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Java SE</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Custom LinkedList</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">EmergencyStack</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300">Queues</span>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">Java SE</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">Custom Linked Lists</span>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-neutral-100 text-[#17181E] border border-[#D5D5D5]">OOP Design</span>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-2">
-              <div class="flex items-center gap-2">
-                <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 !py-2 !px-3 text-xs justify-center">
-                  <span>View Source</span>
-                  <i class="fa-solid fa-code text-[10px]"></i>
-                </a>
-                <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-3 text-xs justify-center" aria-label="GitHub Repository">
-                  <i class="fa-brands fa-github text-sm"></i>
-                </a>
-              </div>
-              <button type="button" class="view-case-study-btn w-full py-1.5 px-3 rounded-lg text-xs font-mono text-cyan-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 transition-all text-center flex items-center justify-center gap-1.5" data-project-id="space-mission">
-                <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> Case Study &amp; Time Machine
+            <div class="pt-4 border-t border-[#D5D5D5] flex items-center gap-2">
+              <button type="button" class="open-case-study flex-1 py-2 px-3 rounded-full bg-[#17181E] hover:bg-black text-white text-xs font-mono font-medium flex items-center justify-center gap-1.5 transition-colors" data-project="space-mission">
+                <i class="fa-solid fa-clock-rotate-left text-[10px] text-[#A5FF50]"></i> Case Study
               </button>
+              <a href="https://github.com/raskassaikarthik07-droid/Space-mission-control" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-full bg-neutral-100 border border-[#D5D5D5] text-[#17181E] hover:bg-neutral-200 text-xs flex items-center justify-center transition-colors" aria-label="GitHub Repository">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -759,432 +744,446 @@
   </section>
 
   <!-- =========================================================================
-       6. TECHNICAL SKILLS SECTION (CATEGORIZED CAPABILITIES)
+       6. SKILLS SECTION: "THINGS I BUILD WITH." (GROUPED INTERACTIVE TILES)
        ========================================================================= -->
-  <section id="skills" class="py-24 px-6 md:px-12 relative border-t border-slate-800/50 bg-[#090d18]/40">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Section Header -->
-      <div class="scroll-reveal max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
-          <span class="w-2 h-[2px] bg-cyan-400"></span> 03. Technical Capabilities
-        </div>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Skills, Tools &amp; Technologies.
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3 editorial-text">
-          Core programming languages, systems engineering, databases, and development toolchains verified across active software projects.
-        </p>
-      </div>
-
-      <!-- Skills Categories Grid (Staggered Waterfall) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-group">
-        
-        <!-- Category 1: Programming Languages -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg mb-4">
-            <i class="fa-solid fa-terminal"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-4">Languages</h3>
-          <div class="flex flex-col gap-3">
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-java text-orange-400 mr-2"></i> Java SE / OOP</span>
-              <span class="text-[11px] font-mono text-cyan-400 font-semibold">Advanced</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-python text-yellow-400 mr-2"></i> Python</span>
-              <span class="text-[11px] font-mono text-cyan-400 font-semibold">Proficient</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-code text-blue-400 mr-2"></i> C / C++</span>
-              <span class="text-[11px] font-mono text-cyan-400 font-semibold">Intermediate</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-js text-amber-300 mr-2"></i> TypeScript / JS</span>
-              <span class="text-[11px] font-mono text-cyan-400 font-semibold">Proficient</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-database text-sky-400 mr-2"></i> SQL</span>
-              <span class="text-[11px] font-mono text-cyan-400 font-semibold">Proficient</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 2: Backend & Systems -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg mb-4">
-            <i class="fa-solid fa-server"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-4">Backend &amp; DB</h3>
-          <div class="flex flex-col gap-3">
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-database text-sky-400 mr-2"></i> Relational DBMS</span>
-              <span class="text-[11px] font-mono text-indigo-400 font-semibold">MySQL / Postgres</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-cube text-violet-400 mr-2"></i> Vector Databases</span>
-              <span class="text-[11px] font-mono text-indigo-400 font-semibold">Search API</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-network-wired text-cyan-400 mr-2"></i> RESTful APIs</span>
-              <span class="text-[11px] font-mono text-indigo-400 font-semibold">FastAPI / Node</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-sitemap text-emerald-400 mr-2"></i> DSA Architecture</span>
-              <span class="text-[11px] font-mono text-indigo-400 font-semibold">Custom OOP</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-shield-halved text-amber-400 mr-2"></i> System Auth</span>
-              <span class="text-[11px] font-mono text-indigo-400 font-semibold">Security</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 3: Frontend & AI / Vision -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 text-lg mb-4">
-            <i class="fa-solid fa-eye"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-4">Frontend &amp; AI</h3>
-          <div class="flex flex-col gap-3">
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-react text-cyan-400 mr-2"></i> React / Next.js</span>
-              <span class="text-[11px] font-mono text-pink-400 font-semibold">Modern UI</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-css3-alt text-blue-400 mr-2"></i> TailwindCSS</span>
-              <span class="text-[11px] font-mono text-pink-400 font-semibold">Responsive</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-brain text-purple-400 mr-2"></i> Computer Vision</span>
-              <span class="text-[11px] font-mono text-pink-400 font-semibold">Landmarks</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-chart-line text-emerald-400 mr-2"></i> Machine Learning</span>
-              <span class="text-[11px] font-mono text-pink-400 font-semibold">Pipelines</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-wand-magic-sparkles text-amber-400 mr-2"></i> HTML5 Canvas</span>
-              <span class="text-[11px] font-mono text-pink-400 font-semibold">60fps Graphics</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Category 4: Tools, Cloud & Hardware -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6">
-          <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-lg mb-4">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-4">Dev Tools &amp; Hardware</h3>
-          <div class="flex flex-col gap-3">
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-git-alt text-red-400 mr-2"></i> Git &amp; GitHub</span>
-              <span class="text-[11px] font-mono text-teal-400 font-semibold">Version Flow</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-linux text-yellow-300 mr-2"></i> Linux / Bash</span>
-              <span class="text-[11px] font-mono text-teal-400 font-semibold">CLI</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-brands fa-docker text-blue-400 mr-2"></i> Docker</span>
-              <span class="text-[11px] font-mono text-teal-400 font-semibold">Containers</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-microchip text-teal-400 mr-2"></i> Arduino / ESP32</span>
-              <span class="text-[11px] font-mono text-teal-400 font-semibold">IoT Hardware</span>
-            </div>
-            <div class="skill-pill p-2 rounded-lg bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-200"><i class="fa-solid fa-cloud-arrow-up text-sky-400 mr-2"></i> Vercel / Pages</span>
-              <span class="text-[11px] font-mono text-teal-400 font-semibold">CI/CD Deploy</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       7. THE PLAYGROUND (ISOLATED CREATIVE LAB EXPERIMENTS)
-       ========================================================================= -->
-  <section id="playground" class="py-24 px-6 md:px-12 relative border-t border-slate-800/50 bg-[#080c16]/50">
+  <section id="skills" class="py-24 px-6 md:px-12 relative border-t border-[#262833]">
     <div class="max-w-7xl mx-auto">
       
       <!-- Section Header -->
       <div class="scroll-reveal max-w-3xl mb-12">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
-          <span class="w-2 h-[2px] bg-cyan-400"></span> 04. Creative Lab
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest mb-3">
+          <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> 03. Technical Capabilities
         </div>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          The Playground.
+          Things I build with.
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3 editorial-text">
-          Modular, isolated interactive experiments in physics simulation, algorithmic mechanics, and generative waves. Zero impact on page performance.
+        <p class="text-neutral-400 text-sm sm:text-base mt-3 editorial-text">
+          Grouped technical capabilities and toolchains. Hover or click any tile to view architectural notes, real project implementations, and tool synergy.
         </p>
       </div>
 
-      <!-- Playground Tab Selector -->
-      <div class="scroll-reveal flex flex-wrap gap-2 mb-8">
-        <button type="button" class="pg-tab-btn px-4 py-2 rounded-xl text-xs font-mono font-medium border border-cyan-500/40 bg-cyan-500/20 text-cyan-300 transition-all" data-target="pg-exp-particles">
-          <i class="fa-solid fa-atom mr-1.5 text-cyan-400"></i> Exp 01: Gravitational Field
-        </button>
-        <button type="button" class="pg-tab-btn px-4 py-2 rounded-xl text-xs font-mono font-medium border border-transparent text-slate-400 hover:text-white transition-all" data-target="pg-exp-ds">
-          <i class="fa-solid fa-layer-group mr-1.5 text-indigo-400"></i> Exp 02: DS Algorithm Sandbox
-        </button>
-        <button type="button" class="pg-tab-btn px-4 py-2 rounded-xl text-xs font-mono font-medium border border-transparent text-slate-400 hover:text-white transition-all" data-target="pg-exp-wave">
-          <i class="fa-solid fa-wave-square mr-1.5 text-pink-400"></i> Exp 03: Cosmic Wave Synth
-        </button>
-      </div>
+      <!-- Category Filter Tabs -->
+      <div id="skills-category-tabs" class="scroll-reveal flex flex-wrap gap-2 mb-8"></div>
 
-      <!-- Pane 1: Gravitational Kinetic Particle Field -->
-      <div id="pg-exp-particles" class="pg-pane glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 bg-[#090d18] relative min-w-0">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 mb-4 border-b border-slate-800">
-          <div>
-            <h3 class="font-display font-bold text-xl text-white">Gravitational Kinetic Field</h3>
-            <p class="text-xs font-mono text-slate-400">Mouse / touch cursor acts as a localized gravity attractor.</p>
-          </div>
-          <button type="button" id="pg-reset-particles" class="btn-secondary !py-1.5 !px-3 text-xs self-start">
-            <i class="fa-solid fa-rotate-right mr-1"></i> Reset Simulation
-          </button>
-        </div>
-
-        <!-- Canvas -->
-        <div class="relative w-full aspect-[16/9] max-h-[460px] rounded-2xl overflow-hidden bg-slate-950/90 border border-slate-800 playground-canvas-wrapper mb-6">
-          <canvas id="pg-particles-canvas" class="w-full h-full block cursor-crosshair"></canvas>
-        </div>
-
-        <!-- Controls Bar -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs font-mono">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-slate-400">Particle Density:</span>
-              <span id="pg-pcount-val" class="text-cyan-400 font-bold">45</span>
-            </div>
-            <input type="range" id="pg-pcount-slider" min="20" max="100" value="45" class="w-full accent-cyan-400 cursor-pointer">
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-slate-400">Gravity Strength:</span>
-              <span id="pg-grav-val" class="text-cyan-400 font-bold">1.2x</span>
-            </div>
-            <input type="range" id="pg-grav-slider" min="0.5" max="3.0" step="0.1" value="1.2" class="w-full accent-cyan-400 cursor-pointer">
+      <!-- Interactive Skills Grid + Live Detail Card -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: Interactive Grouped Tiles -->
+        <div class="scroll-reveal lg:col-span-7">
+          <div id="skills-grouped-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <!-- Dynamically populated by js/modules/skills-module.js -->
           </div>
         </div>
-      </div>
 
-      <!-- Pane 2: Interactive DS Algorithm Sandbox (Structviz Mini) -->
-      <div id="pg-exp-ds" class="pg-pane hidden glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 bg-[#090d18] relative min-w-0">
-        <div class="pb-4 mb-4 border-b border-slate-800">
-          <h3 class="font-display font-bold text-xl text-white">Interactive DS Stack &amp; Memory Sandbox</h3>
-          <p class="text-xs font-mono text-slate-400">Echoing my Structviz project &mdash; inspect LIFO stack pointers, push/pop dynamics, and memory bounds.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          <!-- Stack Graphic (Left) -->
-          <div class="lg:col-span-6 space-y-4">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-              <span>Stack Memory Buffer (Max: 7)</span>
-              <span class="text-cyan-400">LIFO Order</span>
-            </div>
-            <div id="pg-ds-stack" class="flex flex-col gap-2 min-h-[260px] p-4 rounded-2xl bg-slate-950/80 border border-slate-800 justify-end"></div>
-          </div>
-
-          <!-- Controls & Console Log (Right) -->
-          <div class="lg:col-span-6 space-y-4">
-            <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4">
-              <label class="block text-xs font-mono text-slate-400">Input Value (Optional integer):</label>
-              <div class="flex gap-2">
-                <input type="number" id="pg-ds-input" placeholder="e.g. 99" class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white font-mono text-xs focus:outline-none focus:border-cyan-400">
-                <button type="button" id="pg-ds-push" class="btn-primary !py-2 !px-4 text-xs font-mono">PUSH</button>
-              </div>
-              <div class="grid grid-cols-3 gap-2">
-                <button type="button" id="pg-ds-pop" class="btn-secondary !py-2 text-xs font-mono justify-center text-rose-400 border-rose-500/30">POP</button>
-                <button type="button" id="pg-ds-peek" class="btn-secondary !py-2 text-xs font-mono justify-center text-cyan-400 border-cyan-500/30">PEEK</button>
-                <button type="button" id="pg-ds-clear" class="btn-secondary !py-2 text-xs font-mono justify-center text-slate-400 border-slate-700">CLEAR</button>
-              </div>
+        <!-- Right Column: Live Skill Detail Card -->
+        <div class="scroll-reveal lg:col-span-5 sticky top-24">
+          <div id="skill-detail-card" class="card-charcoal p-7 sm:p-8 space-y-6">
+            <div class="flex items-center justify-between pb-4 border-b border-[#262833]">
+              <span id="sd-category" class="text-xs font-mono uppercase tracking-widest text-neutral-400">Languages</span>
+              <span id="sd-level" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-[#A5FF50] text-[#111111]">Advanced</span>
             </div>
 
-            <!-- Execution Log -->
-            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
-              <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider mb-2 flex items-center justify-between">
-                <span>Execution Trace:</span>
-                <span class="text-emerald-400">&bull; Live</span>
-              </div>
-              <div id="pg-ds-log" class="h-32 overflow-y-auto space-y-1 text-xs font-mono text-slate-300"></div>
+            <div>
+              <h3 id="sd-name" class="font-display font-bold text-2xl text-white">Java SE / OOP</h3>
+              <p id="sd-desc" class="text-neutral-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                Object-oriented design, custom data structures, file I/O streams, inheritance architectures.
+              </p>
+            </div>
+
+            <!-- Verified In Projects -->
+            <div class="pt-4 border-t border-[#262833]">
+              <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-2.5">Verified In Projects:</div>
+              <div id="sd-projects" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <!-- Paired Tools & Frameworks -->
+            <div class="pt-4 border-t border-[#262833]">
+              <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-2.5">Paired With Tools &amp; Libraries:</div>
+              <div id="sd-tools" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="pt-2 text-[11px] font-mono text-neutral-500 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-[#A5FF50]"></i>
+              <span>Hover or tap any skill on the left to inspect</span>
             </div>
           </div>
-
-        </div>
-      </div>
-
-      <!-- Pane 3: Cosmic Harmonic Wave Synthesizer -->
-      <div id="pg-exp-wave" class="pg-pane hidden glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 bg-[#090d18] relative min-w-0">
-        <div class="pb-4 mb-4 border-b border-slate-800">
-          <h3 class="font-display font-bold text-xl text-white">Cosmic Harmonic Wave Synthesizer</h3>
-          <p class="text-xs font-mono text-slate-400">Multi-harmonic trigonometric sine waves rendered in real-time on HTML5 canvas.</p>
         </div>
 
-        <!-- Canvas -->
-        <div class="relative w-full aspect-[16/8] max-h-[380px] rounded-2xl overflow-hidden bg-slate-950/90 border border-slate-800 mb-6">
-          <canvas id="pg-wave-canvas" class="w-full h-full block"></canvas>
-        </div>
-
-        <!-- Wave Controls -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs font-mono">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-slate-400">Frequency:</span>
-              <span id="pg-wave-freq-val" class="text-cyan-400 font-bold">0.020</span>
-            </div>
-            <input type="range" id="pg-wave-freq" min="0.005" max="0.06" step="0.002" value="0.02" class="w-full accent-cyan-400 cursor-pointer">
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-slate-400">Amplitude:</span>
-              <span id="pg-wave-amp-val" class="text-indigo-400 font-bold">35px</span>
-            </div>
-            <input type="range" id="pg-wave-amp" min="10" max="70" step="2" value="35" class="w-full accent-indigo-400 cursor-pointer">
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-slate-400">Phase Speed:</span>
-              <span id="pg-wave-speed-val" class="text-pink-400 font-bold">0.04</span>
-            </div>
-            <input type="range" id="pg-wave-speed" min="0.01" max="0.1" step="0.005" value="0.04" class="w-full accent-pink-400 cursor-pointer">
-          </div>
-        </div>
       </div>
 
     </div>
   </section>
 
   <!-- =========================================================================
-       8. JOURNEY TIMELINE (SCROLL-DRIVEN MILESTONES)
+       7. PLAYGROUND: "THINGS I MADE OUT OF CURIOSITY." (CREATIVE LAB)
        ========================================================================= -->
-  <section id="journey" class="py-24 px-6 md:px-12 relative border-t border-slate-800/50">
+  <section id="playground" class="py-24 px-6 md:px-12 relative border-t border-[#262833] bg-[#0A0B10]">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="scroll-reveal max-w-3xl mb-12">
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest mb-3">
+          <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> 04. Creative Lab
+        </div>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Things I made out of curiosity.
+        </h2>
+        <p class="text-neutral-400 text-sm sm:text-base mt-3 editorial-text">
+          Modular, isolated interactive experiments in physics simulation, algorithmic data structures, and generative wave mathematics.
+        </p>
+      </div>
+
+      <!-- Tab Switcher (Charcoal & Acid Lime) -->
+      <div class="scroll-reveal flex flex-wrap gap-2 mb-8">
+        <button type="button" class="pg-tab-btn px-4 py-2 rounded-xl text-xs font-mono font-bold bg-[#A5FF50] text-[#111111] transition-all shadow-md shadow-[#A5FF50]/15" data-target="pg-pane-particles">
+          <i class="fa-solid fa-atom mr-1.5"></i> 01. Gravitational Particles
+        </button>
+        <button type="button" class="pg-tab-btn px-4 py-2 rounded-xl text-xs font-mono font-medium bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white transition-all" data-target="pg-pane-ds">
+          <i class="fa-solid fa-layer-group mr-1.5"></i> 02. Data Structures Sandbox
+        </button>
+        <button type="button" class="pg-tab-btn px-4 py-2 rounded-xl text-xs font-mono font-medium bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white transition-all" data-target="pg-pane-wave">
+          <i class="fa-solid fa-water mr-1.5"></i> 03. Harmonic Wave Synthesizer
+        </button>
+      </div>
+
+      <!-- Playground Panes Container -->
+      <div class="card-charcoal p-6 sm:p-8">
+        
+        <!-- PANE 1: GRAVITATIONAL PARTICLES -->
+        <div id="pg-pane-particles" class="pg-pane">
+          <div class="flex flex-col lg:flex-row gap-6">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#262833] text-xs font-mono text-neutral-400">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#A5FF50] animate-ping"></span>
+                  <span>Interactive Physics Canvas (Move cursor or touch)</span>
+                </span>
+                <span class="text-[#A5FF50]">60fps Vector Math</span>
+              </div>
+              <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-[#0A0B10] border border-[#262833] relative">
+                <canvas id="pg-particles-canvas" class="w-full h-full block cursor-crosshair"></canvas>
+              </div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="lg:w-80 flex flex-col justify-between space-y-6 pt-2">
+              <div class="space-y-5">
+                <div>
+                  <h4 class="font-display font-bold text-lg text-white">Gravitational Field</h4>
+                  <p class="text-xs text-neutral-400 mt-1 leading-relaxed">
+                    Custom gravitational mass attractor calculating inverse-square attraction vectors for dynamic particles.
+                  </p>
+                </div>
+
+                <!-- Sliders -->
+                <div class="space-y-4 font-mono text-xs">
+                  <div>
+                    <div class="flex justify-between text-neutral-300 mb-1">
+                      <span>Particle Density:</span>
+                      <span id="pg-particle-count-val" class="text-[#A5FF50]">45</span>
+                    </div>
+                    <input type="range" id="pg-particle-count" min="15" max="90" value="45" class="w-full accent-[#A5FF50] cursor-pointer">
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-neutral-300 mb-1">
+                      <span>Gravitational Pull:</span>
+                      <span id="pg-gravity-val" class="text-[#A5FF50]">1.2x</span>
+                    </div>
+                    <input type="range" id="pg-gravity-strength" min="0.2" max="3.0" step="0.1" value="1.2" class="w-full accent-[#A5FF50] cursor-pointer">
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-[#262833] flex items-center gap-3">
+                <button type="button" id="pg-particle-reset" class="btn-lime flex-1 !py-2 text-xs font-mono font-bold justify-center">
+                  <i class="fa-solid fa-rotate-right mr-1"></i> Reset Field
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 2: DATA STRUCTURES STACK SANDBOX -->
+        <div id="pg-pane-ds" class="pg-pane hidden">
+          <div class="flex flex-col lg:flex-row gap-6">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#262833] text-xs font-mono text-neutral-400">
+                <span>Interactive LIFO Stack Memory Space</span>
+                <span class="text-[#A5FF50]">LIFO Mechanics</span>
+              </div>
+              <div class="w-full aspect-[16/9] rounded-2xl bg-[#0A0B10] border border-[#262833] p-6 flex flex-col justify-end overflow-hidden relative">
+                <div id="pg-ds-stack" class="flex flex-col-reverse gap-2 max-h-[260px] overflow-y-auto"></div>
+              </div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="lg:w-80 flex flex-col justify-between space-y-6 pt-2">
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-display font-bold text-lg text-white">Stack Memory Model</h4>
+                  <p class="text-xs text-neutral-400 mt-1 leading-relaxed">
+                    Interactive simulation of Last-In-First-Out call stack memory allocation and pointer tracking.
+                  </p>
+                </div>
+
+                <!-- Input -->
+                <div class="space-y-2">
+                  <label for="pg-ds-input" class="text-xs font-mono text-neutral-300 block">Item Value:</label>
+                  <input type="text" id="pg-ds-input" placeholder="e.g. Node_01" class="w-full px-3 py-2 rounded-xl bg-[#111218] border border-[#262833] text-white text-xs font-mono focus:border-[#A5FF50] focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                  <button type="button" id="pg-ds-push" class="btn-lime !py-2 text-xs font-mono font-bold justify-center">
+                    <i class="fa-solid fa-arrow-down mr-1"></i> Push
+                  </button>
+                  <button type="button" id="pg-ds-pop" class="btn-secondary !py-2 text-xs font-mono justify-center">
+                    <i class="fa-solid fa-arrow-up mr-1 text-[#A5FF50]"></i> Pop
+                  </button>
+                  <button type="button" id="pg-ds-peek" class="btn-secondary !py-2 text-xs font-mono justify-center">
+                    Peek
+                  </button>
+                  <button type="button" id="pg-ds-clear" class="btn-secondary !py-2 text-xs font-mono text-rose-400 border-rose-900/50 justify-center">
+                    Clear
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-[#111218] border border-[#262833] font-mono text-xs space-y-1.5">
+                <div class="flex justify-between text-neutral-400">
+                  <span>Stack Depth:</span>
+                  <span id="pg-ds-count" class="text-white font-bold">0 items</span>
+                </div>
+                <div class="flex justify-between text-neutral-400">
+                  <span>Top Pointer:</span>
+                  <span id="pg-ds-peek-val" class="text-[#A5FF50]">NULL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 3: HARMONIC WAVE SYNTHESIZER -->
+        <div id="pg-pane-wave" class="pg-pane hidden">
+          <div class="flex flex-col lg:flex-row gap-6">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#262833] text-xs font-mono text-neutral-400">
+                <span>Harmonic Trigonometric Wave Generator</span>
+                <span class="text-[#A5FF50]">Sine Wave Function</span>
+              </div>
+              <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-[#0A0B10] border border-[#262833] relative">
+                <canvas id="pg-wave-canvas" class="w-full h-full block"></canvas>
+              </div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="lg:w-80 flex flex-col justify-between space-y-6 pt-2">
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-display font-bold text-lg text-white">Wave Physics</h4>
+                  <p class="text-xs text-neutral-400 mt-1 leading-relaxed">
+                    Visual synthesizer computing superposition of continuous sinusoidal waveforms in real time.
+                  </p>
+                </div>
+
+                <div class="space-y-4 font-mono text-xs">
+                  <div>
+                    <div class="flex justify-between text-neutral-300 mb-1">
+                      <span>Frequency (Hz):</span>
+                      <span id="pg-wave-freq-val" class="text-[#A5FF50]">0.02</span>
+                    </div>
+                    <input type="range" id="pg-wave-freq" min="0.005" max="0.06" step="0.005" value="0.02" class="w-full accent-[#A5FF50] cursor-pointer">
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-neutral-300 mb-1">
+                      <span>Amplitude:</span>
+                      <span id="pg-wave-amp-val" class="text-[#A5FF50]">40px</span>
+                    </div>
+                    <input type="range" id="pg-wave-amp" min="10" max="80" value="40" class="w-full accent-[#A5FF50] cursor-pointer">
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-neutral-300 mb-1">
+                      <span>Phase Velocity:</span>
+                      <span id="pg-wave-speed-val" class="text-[#A5FF50]">1.0x</span>
+                    </div>
+                    <input type="range" id="pg-wave-speed" min="0.2" max="3.0" step="0.2" value="1.0" class="w-full accent-[#A5FF50] cursor-pointer">
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-[#111218] border border-[#262833] text-neutral-400 font-mono text-xs">
+                y = A &bull; sin(&omega;t + &phi;) + B &bull; cos(2&omega;t)
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. JOURNEY TIMELINE (EDITORIAL MILESTONES + ACID LIME MARKERS)
+       ========================================================================= -->
+  <section id="journey" class="py-24 px-6 md:px-12 relative border-t border-[#262833]">
     <div class="max-w-7xl mx-auto">
       
       <!-- Section Header -->
       <div class="scroll-reveal max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
-          <span class="w-2 h-[2px] bg-cyan-400"></span> 05. Milestones
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest mb-3">
+          <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> 05. Academic Journey
         </div>
         <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Journey &amp; Academic Milestones.
+          Education &amp; Academic Foundations.
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-3 editorial-text">
-          A continuous arc of curiosity, scholastic discipline, and production releases.
+        <p class="text-neutral-400 text-sm sm:text-base mt-3 editorial-text">
+          Verified scholastic track record, engineering degree milestones, and open-source contributions.
         </p>
       </div>
 
-      <!-- Staggered Timeline Group -->
-      <div class="stagger-group relative pl-6 sm:pl-10 space-y-12 before:content-[''] before:absolute before:left-2 sm:before:left-4 before:top-3 before:bottom-3 before:w-[2px] before:bg-gradient-to-b before:from-cyan-400 before:via-indigo-500 before:to-slate-800">
+      <!-- Timeline Container -->
+      <div class="stagger-group relative pl-6 sm:pl-10 space-y-12 before:content-[''] before:absolute before:left-2 sm:before:left-4 before:top-3 before:bottom-3 before:w-[2px] before:bg-gradient-to-b before:from-[#A5FF50] before:via-neutral-700 before:to-[#262833]">
 
-        <!-- Milestone 1: KL University -->
-        <div class="stagger-child relative min-w-0">
-          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[#070a12]"></div>
+        <!-- Milestone 1: KL University B.Tech -->
+        <div class="stagger-child relative">
+          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#A5FF50] border-4 border-[#0D0E14]"></div>
           
-          <div class="glass-card spotlight-card rounded-2xl p-6 sm:p-8 min-w-0">
+          <div class="card-charcoal p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
               <div>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#A5FF50] text-[#111111]">
                   Current Degree
                 </span>
                 <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
                   B.Tech in Computer Science &amp; Engineering
                 </h3>
               </div>
-              <div class="font-mono text-xs text-slate-400 sm:text-right">
-                <i class="fa-regular fa-calendar-days mr-1 text-cyan-400"></i> Jun 2025 &ndash; 2029 <br>
-                <i class="fa-solid fa-location-dot mr-1 text-cyan-400"></i> Hyderabad, India
+              <div class="font-mono text-xs text-neutral-400 sm:text-right">
+                <i class="fa-regular fa-calendar-days mr-1 text-[#A5FF50]"></i> Jun 2025 – Present <br>
+                <i class="fa-solid fa-location-dot mr-1 text-[#A5FF50]"></i> Hyderabad, India
               </div>
             </div>
 
-            <p class="text-cyan-300 font-medium text-sm mb-3">
-              KL University (Koneru Lakshmaiah Education Foundation) &bull; ID: 2510030295
+            <p class="text-[#A5FF50] font-medium text-sm mb-4">
+              KL University, Hyderabad (KLH) &bull; ID: 2510030295
             </p>
 
-            <p class="text-slate-300 text-sm leading-relaxed mb-6 editorial-text">
-              Focused on core computing fundamentals, modern software engineering paradigms, and hands-on system labs. Actively developing practical projects across Database Management Systems, IoT Architecture, Data Structures, and Algorithmic Problem Solving.
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+              Deep dive into Object-Oriented Programming (Java), Data Structures &amp; Algorithms, Database Systems, Computer Networks, and IoT architecture. Committed to building practical, working engineering projects.
             </p>
 
-            <!-- Coursework Chips -->
             <div class="flex flex-wrap gap-2">
-              <span class="skill-pill px-3 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Data Structures &amp; Algorithms</span>
-              <span class="skill-pill px-3 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Java OOP Systems</span>
-              <span class="skill-pill px-3 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">Relational &amp; Vector Databases</span>
-              <span class="skill-pill px-3 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-slate-300 border border-slate-700/60">IoT &amp; ESP32 Hardware</span>
+              <span class="px-3 py-1 rounded-md text-xs font-mono bg-[#111218] text-neutral-300 border border-[#262833]">Data Structures &amp; Algorithms</span>
+              <span class="px-3 py-1 rounded-md text-xs font-mono bg-[#111218] text-neutral-300 border border-[#262833]">Java OOP Systems</span>
+              <span class="px-3 py-1 rounded-md text-xs font-mono bg-[#111218] text-neutral-300 border border-[#262833]">Relational &amp; Vector Databases</span>
+              <span class="px-3 py-1 rounded-md text-xs font-mono bg-[#111218] text-neutral-300 border border-[#262833]">Computer Vision Models</span>
             </div>
           </div>
         </div>
 
-        <!-- Milestone 2: Narayana Junior College -->
-        <div class="stagger-child relative min-w-0">
-          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-400 border-4 border-[#070a12]"></div>
+        <!-- Milestone 2: Narayana Junior College (Intermediate) -->
+        <div class="stagger-child relative">
+          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#0D0E14]"></div>
           
-          <div class="glass-card spotlight-card rounded-2xl p-6 sm:p-8 min-w-0">
+          <div class="card-light p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
               <div>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#17181E] text-white">
                   Intermediate (MPC)
                 </span>
-                <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
+                <h3 class="font-display font-bold text-xl sm:text-2xl text-[#17181E] mt-2">
                   Board of Intermediate Education (MPC)
                 </h3>
               </div>
-              <div class="font-mono text-xs text-slate-400 sm:text-right">
-                <i class="fa-regular fa-calendar-days mr-1 text-indigo-400"></i> 2023 &ndash; 2025 <br>
-                <i class="fa-solid fa-location-dot mr-1 text-indigo-400"></i> Hyderabad, India
+              <div class="font-mono text-xs text-neutral-600 sm:text-right">
+                <i class="fa-regular fa-calendar-days mr-1 text-[#17181E]"></i> 2023 – 2025 <br>
+                <i class="fa-solid fa-location-dot mr-1 text-[#17181E]"></i> Hyderabad, India
               </div>
             </div>
 
-            <p class="text-indigo-300 font-medium text-sm mb-3">
+            <p class="text-neutral-800 font-medium text-sm mb-3">
               Narayana Junior College
             </p>
 
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-semibold mb-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#A5FF50] text-[#111111] text-xs font-mono font-bold mb-4">
               <i class="fa-solid fa-award"></i> Academic Performance: 89% Distinction
             </div>
 
-            <p class="text-slate-300 text-sm leading-relaxed editorial-text">
-              Intensive training in Mathematics, Physics, and Chemistry. Developed strong analytical reasoning, quantitative problem-solving skills, and rigorous academic discipline that underpin algorithmic study.
+            <p class="text-neutral-700 text-sm leading-relaxed">
+              Rigorous immersion in Advanced Mathematics, Physics, and Chemistry. Developed structured quantitative problem-solving and analytical deduction serving as the bedrock of computer science.
             </p>
           </div>
         </div>
 
-        <!-- Milestone 3: Little Flower High School -->
-        <div class="stagger-child relative min-w-0">
-          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-500 border-4 border-[#070a12]"></div>
+        <!-- Milestone 3: Little Flower High School (SSC) -->
+        <div class="stagger-child relative">
+          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-neutral-400 border-4 border-[#0D0E14]"></div>
           
-          <div class="glass-card spotlight-card rounded-2xl p-6 sm:p-8 min-w-0">
+          <div class="card-charcoal p-6 sm:p-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
               <div>
-                <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-700/40 text-slate-300 border border-slate-600/40">
+                <span class="px-3 py-1 rounded-full text-xs font-mono bg-[#111218] text-neutral-300 border border-[#262833]">
                   Secondary School
                 </span>
                 <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-2">
                   Secondary School Certificate (SSC)
                 </h3>
               </div>
-              <div class="font-mono text-xs text-slate-400 sm:text-right">
-                <i class="fa-regular fa-calendar-days mr-1 text-slate-400"></i> 2013 &ndash; 2023 <br>
-                <i class="fa-solid fa-location-dot mr-1 text-slate-400"></i> Hyderabad, India
+              <div class="font-mono text-xs text-neutral-400 sm:text-right">
+                <i class="fa-regular fa-calendar-days mr-1 text-neutral-400"></i> 2013 – 2023 <br>
+                <i class="fa-solid fa-location-dot mr-1 text-neutral-400"></i> Hyderabad, India
               </div>
             </div>
 
-            <p class="text-slate-300 font-medium text-sm mb-3">
+            <p class="text-neutral-300 font-medium text-sm mb-3">
               Little Flower High School
             </p>
 
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-mono font-semibold mb-4">
-              <i class="fa-solid fa-medal text-cyan-400"></i> Academic Score: 9.7 / 10 GPA (97%)
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#111218] border border-[#262833] text-white text-xs font-mono font-semibold mb-4">
+              <i class="fa-solid fa-medal text-[#A5FF50]"></i> Academic Score: 9.7 / 10 GPA (97%)
             </div>
 
-            <p class="text-slate-300 text-sm leading-relaxed editorial-text">
-              Graduated with an outstanding 9.7 GPA, demonstrating consistent academic excellence, active participation in science exhibitions, and foundational mathematics and computational studies.
+            <p class="text-neutral-300 text-sm leading-relaxed">
+              Graduated with a stellar 9.7 GPA, demonstrating consistent academic excellence, active participation in science exhibitions, and foundational mathematics and computational studies.
             </p>
+          </div>
+        </div>
+
+        <!-- Milestone 4: Production Software & Educational Releases -->
+        <div class="stagger-child relative">
+          <div class="timeline-dot absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#A5FF50] border-4 border-[#0D0E14]"></div>
+          
+          <div class="card-lime p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+              <div>
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#111111] text-white">
+                  Open-Source Releases
+                </span>
+                <h3 class="font-display font-black text-xl sm:text-2xl text-[#111111] mt-2">
+                  6 Production Applications &amp; Frameworks
+                </h3>
+              </div>
+              <div class="font-mono text-xs text-neutral-900 sm:text-right font-medium">
+                <i class="fa-regular fa-calendar-days mr-1"></i> 2025 – 2026 <br>
+                <i class="fa-solid fa-code-branch mr-1"></i> GitHub &amp; Webhosts
+              </div>
+            </div>
+
+            <p class="text-neutral-900 text-sm leading-relaxed mb-4 font-medium">
+              Engineered and deployed MovieRecommend on Vercel, Structviz on GitHub Pages, RehabVision Physio on GitHub Pages, GreenLeaf Botanical Store, SkyBook Flight Reservation, and Space Mission Control Java architecture.
+            </p>
+
+            <div class="flex flex-wrap gap-2 text-xs font-mono font-bold text-[#111111]">
+              <span class="px-2.5 py-1 rounded bg-black/10">movierecommend</span>
+              <span class="px-2.5 py-1 rounded bg-black/10">Structviz</span>
+              <span class="px-2.5 py-1 rounded bg-black/10">Rehabvision_physio</span>
+              <span class="px-2.5 py-1 rounded bg-black/10">plants</span>
+              <span class="px-2.5 py-1 rounded bg-black/10">flight</span>
+              <span class="px-2.5 py-1 rounded bg-black/10">Space-mission-control</span>
+            </div>
           </div>
         </div>
 
@@ -1194,110 +1193,67 @@
   </section>
 
   <!-- =========================================================================
-       9. CONTACT SECTION (DIRECT CONNECT HUB)
+       9. CONTACT SECTION & FOOTER: "GOT AN IDEA? LET'S MAKE IT REAL."
        ========================================================================= -->
-  <section id="contact" class="py-24 px-6 md:px-12 relative border-t border-slate-800/50 bg-[#090d18]/40">
+  <section id="contact" class="py-24 px-6 md:px-12 relative border-t border-[#262833]">
     <div class="max-w-7xl mx-auto">
       
-      <!-- Section Header -->
-      <div class="scroll-reveal max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest mb-3">
-          <span class="w-2 h-[2px] bg-cyan-400"></span> 06. Contact
-        </div>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          LET'S BUILD SOMETHING UNEXPECTED.
-        </h2>
-        <p class="text-slate-400 text-base sm:text-lg mt-4 leading-relaxed editorial-text">
-          I am currently open to summer engineering internships, full-stack &amp; backend projects, research collaborations, and tech opportunities. Connect with me directly through any channel below:
-        </p>
-      </div>
-
-      <!-- Contact Cards Grid (Staggered Waterfall) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+      <!-- Editorial Closing Card (Acid Lime & Dark Charcoal) -->
+      <div class="card-charcoal p-8 sm:p-14 relative overflow-hidden">
         
-        <!-- Card 1: Direct Email -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-w-0">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-6">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Direct Email</span>
-            <h3 class="font-display font-bold text-xl text-white mt-1 mb-2 break-all">raskas.saikarthik07@gmail.com</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Have an opportunity, internship inquiry, or project proposal? Send an email directly to my primary inbox.
-            </p>
+        <!-- Corner Ambient Glow -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-[#A5FF50]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl">
+          <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest mb-4">
+            <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> Direct Connection Hub
           </div>
-          <div class="pt-4 border-t border-slate-800 flex items-center gap-3">
-            <a href="mailto:raskas.saikarthik07@gmail.com" class="btn-primary flex-1 !py-2.5 text-xs justify-center">
+
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            Got an idea? <br>
+            <span class="text-[#A5FF50]">Let's make it real.</span>
+          </h2>
+
+          <p class="text-neutral-300 text-base sm:text-lg leading-relaxed mb-8 editorial-text">
+            I am currently open for <strong class="text-white">Summer 2025/2026 Software Engineering Internships</strong>, distributed systems research, and ambitious open-source collaborations. Feel free to reach out directly:
+          </p>
+
+          <!-- Direct Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 mb-10">
+            <a href="mailto:raskas.saikarthik07@gmail.com" class="btn-lime text-sm">
+              <i class="fa-solid fa-paper-plane text-xs"></i>
               <span>Send Email</span>
-              <i class="fa-solid fa-paper-plane text-[10px]"></i>
             </a>
-            <button type="button" id="copy-email-btn" class="btn-secondary !py-2.5 !px-3 text-xs" title="Copy email address">
-              <i class="fa-regular fa-copy"></i>
+            
+            <button type="button" id="copy-email-btn" class="btn-charcoal text-sm" onclick="navigator.clipboard.writeText('raskas.saikarthik07@gmail.com'); window.showPortfolioToast && window.showPortfolioToast('Copied raskas.saikarthik07@gmail.com to clipboard');">
+              <i class="fa-regular fa-copy text-xs text-[#A5FF50]"></i>
+              <span>Copy Email</span>
+            </button>
+
+            <button type="button" class="open-terminal-btn btn-charcoal text-sm">
+              <i class="fa-solid fa-terminal text-xs text-[#A5FF50]"></i>
+              <span>Open Terminal</span>
             </button>
           </div>
-        </div>
 
-        <!-- Card 2: LinkedIn Profile -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-w-0">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl mb-6">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </div>
-            <span class="text-xs font-mono text-sky-400 uppercase tracking-wider">Professional Network</span>
-            <h3 class="font-display font-bold text-xl text-white mt-1 mb-2">LinkedIn Profile</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Connect with me professionally, view my technical endorsements, or message me directly on LinkedIn.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-slate-800">
-            <a href="https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full !py-2.5 text-xs justify-center !bg-gradient-to-r !from-sky-600 !to-blue-600">
-              <span>Connect on LinkedIn</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          <!-- Social Links & Campus Details Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-[#262833]">
+            <a href="mailto:raskas.saikarthik07@gmail.com" class="p-4 rounded-xl bg-[#111218] border border-[#262833] hover:border-[#A5FF50] transition-colors block group">
+              <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-1">Direct Email</div>
+              <div class="text-sm font-bold text-white group-hover:text-[#A5FF50] transition-colors truncate">raskas.saikarthik07@gmail.com</div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-[#111218] border border-[#262833] hover:border-[#A5FF50] transition-colors block group">
+              <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-1">LinkedIn Profile</div>
+              <div class="text-sm font-bold text-white group-hover:text-[#A5FF50] transition-colors truncate">raskas-sai-karthik-7b3746378</div>
+            </a>
+
+            <a href="https://github.com/raskassaikarthik07-droid" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-[#111218] border border-[#262833] hover:border-[#A5FF50] transition-colors block group">
+              <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wider mb-1">GitHub Repos</div>
+              <div class="text-sm font-bold text-white group-hover:text-[#A5FF50] transition-colors truncate">@raskassaikarthik07-droid</div>
             </a>
           </div>
-        </div>
 
-        <!-- Card 3: GitHub Repositories -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between min-w-0">
-          <div>
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-6">
-              <i class="fa-brands fa-github"></i>
-            </div>
-            <span class="text-xs font-mono text-purple-400 uppercase tracking-wider">Source Code &amp; Repos</span>
-            <h3 class="font-display font-bold text-xl text-white mt-1 mb-2 truncate">@raskassaikarthik07-droid</h3>
-            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Explore my open-source repositories, commit activity, webhosted applications, and algorithmic solutions.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-slate-800">
-            <a href="https://github.com/raskassaikarthik07-droid" target="_blank" rel="noopener noreferrer" class="btn-primary w-full !py-2.5 text-xs justify-center !bg-gradient-to-r !from-purple-600 !to-indigo-600">
-              <span>Visit GitHub Profile</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 4: Academic Institution -->
-        <div class="stagger-child glass-card spotlight-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between md:col-span-2 lg:col-span-3 min-w-0">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <div class="min-w-0">
-                <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider">Campus Location &amp; Academics</span>
-                <h3 class="font-display font-bold text-xl text-white truncate">KL University, Hyderabad (KLH)</h3>
-                <p class="text-slate-400 text-xs font-mono mt-0.5">B.Tech Computer Science &amp; Engineering &bull; Roll Number: 2510030295 &bull; Telangana, India</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 self-start sm:self-auto">
-              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Active Student Status</span>
-              </span>
-            </div>
-          </div>
         </div>
 
       </div>
@@ -1306,220 +1262,196 @@
   </section>
 
   <!-- =========================================================================
-       10. FOOTER & BACK TO TOP
+       10. MINIMALIST FOOTER
        ========================================================================= -->
-  <footer class="py-12 px-6 md:px-12 border-t border-slate-800/80 bg-[#060810] relative text-xs text-slate-500 font-mono">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer class="py-10 px-6 md:px-12 border-t border-[#262833] bg-[#0A0B10] text-xs font-mono text-neutral-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       
-      <!-- Brand & Copyright -->
-      <div class="flex items-center gap-3">
-        <span class="w-6 h-6 rounded-md bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs">SK</span>
-        <span>&copy; 2026 Raskas Sai Karthik. Built with Architectural Discipline.</span>
-      </div>
-
-      <!-- Quick Links & Socials -->
-      <div class="flex items-center gap-6">
-        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
-        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-        <a href="#playground" class="hover:text-cyan-400 transition-colors">Playground</a>
-        <a href="#journey" class="hover:text-cyan-400 transition-colors">Journey</a>
-        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
-        <span class="text-slate-700">|</span>
-        <a href="https://github.com/raskassaikarthik07-droid" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 text-sm transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 text-sm transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
-
-      <!-- System Status -->
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-slate-400">Node KLH-01 &bull; 60fps</span>
+        <span class="w-2 h-2 rounded-full bg-[#A5FF50] animate-pulse"></span>
+        <span class="text-neutral-400">&copy; 2026 Raskas Sai Karthik &bull; KL University Hyderabad (ID: 2510030295)</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-[#A5FF50] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[#A5FF50] transition-colors">About</a>
+        <a href="#projects" class="hover:text-[#A5FF50] transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-[#A5FF50] transition-colors">Skills</a>
+        <a href="#playground" class="hover:text-[#A5FF50] transition-colors">Playground</a>
+        <a href="#contact" class="hover:text-[#A5FF50] transition-colors">Contact</a>
       </div>
 
     </div>
   </footer>
 
-  <!-- Floating Action Buttons (Right) -->
-  <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-2.5 items-end">
-    <!-- Quick Command Palette Pill -->
-    <button type="button" class="open-palette-btn px-3 py-1.5 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs font-mono transition-all" title="Open Command Palette (Ctrl + K)">
-      <i class="fa-solid fa-magnifying-glass text-cyan-400 text-[10px]"></i>
-      <span class="hidden sm:inline">Palette</span>
-      <kbd class="px-1 py-0.5 rounded bg-slate-800 text-[9px] text-slate-400 border border-slate-700">⌘K</kbd>
-    </button>
-
-    <!-- Quick Terminal Pill -->
-    <button type="button" class="open-terminal-btn px-3 py-1.5 rounded-full bg-slate-900/90 hover:bg-slate-800 text-cyan-400 hover:text-white border border-cyan-500/40 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs font-mono transition-all" title="Toggle Terminal (Ctrl + ~)">
-      <i class="fa-solid fa-terminal text-[10px]"></i>
-      <span class="hidden sm:inline">CLI</span>
-      <kbd class="px-1 py-0.5 rounded bg-slate-800 text-[9px] text-slate-400 border border-slate-700">~</kbd>
-    </button>
-
-    <!-- Floating Back-to-Top Button -->
-    <button id="back-to-top" class="w-10 h-10 rounded-full bg-slate-800/90 hover:bg-cyan-500 text-slate-300 hover:text-white border border-slate-700/80 shadow-xl backdrop-blur-md flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none translate-y-4" aria-label="Back to top">
-      <i class="fa-solid fa-arrow-up text-xs"></i>
-    </button>
-  </div>
-
   <!-- =========================================================================
-       11. MODALS & OVERLAYS
+       11. INTERACTIVE MODALS (COMMAND PALETTE, CASE STUDY, TERMINAL, TOAST)
        ========================================================================= -->
-
-  <!-- A. COMMAND PALETTE MODAL (Ctrl / Cmd + K) -->
-  <div id="command-palette-modal" class="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-slate-950/80 backdrop-blur-md hidden">
-    <div class="palette-card w-full max-w-xl rounded-2xl bg-[#090d18] border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col">
-      <!-- Search Input Header -->
-      <div class="p-4 border-b border-slate-800 flex items-center gap-3">
-        <i class="fa-solid fa-magnifying-glass text-cyan-400 text-sm"></i>
-        <input type="text" id="palette-search-input" placeholder="Type a command or search (e.g. 'projects', 'about', 'structviz')..." class="w-full bg-transparent text-sm text-white focus:outline-none placeholder:text-slate-500 font-mono">
-        <button type="button" id="palette-close-btn" class="text-slate-400 hover:text-white text-xs px-2 py-1 rounded bg-slate-800/80">ESC</button>
+  <!-- COMMAND PALETTE MODAL (Ctrl / Cmd + K) -->
+  <div id="command-palette-modal" class="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/80 backdrop-blur-md hidden" aria-modal="true" role="dialog">
+    <div class="palette-card w-full max-w-2xl card-charcoal border border-[#262833] shadow-2xl overflow-hidden">
+      
+      <div class="p-4 border-b border-[#262833] flex items-center gap-3">
+        <i class="fa-solid fa-magnifying-glass text-[#A5FF50]"></i>
+        <input type="text" id="palette-search-input" placeholder="Type a command or search sections, projects, links..." autocomplete="off" class="flex-1 bg-transparent text-white placeholder-neutral-500 focus:outline-none font-mono text-sm">
+        <button type="button" id="palette-close-btn" class="text-neutral-400 hover:text-white px-2 py-1 rounded bg-[#111218] border border-[#262833] text-xs font-mono">
+          Esc
+        </button>
       </div>
 
-      <!-- Results List -->
-      <div id="palette-results-list" class="max-h-80 overflow-y-auto p-2 space-y-1"></div>
+      <div id="palette-results-list" class="max-h-[380px] overflow-y-auto p-2 divide-y divide-[#262833]/60"></div>
 
-      <!-- Palette Footer -->
-      <div class="px-4 py-2.5 bg-slate-950/90 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
-        <div class="flex items-center gap-3">
-          <span><kbd class="px-1 rounded bg-slate-800 border border-slate-700 text-slate-400">&uarr;</kbd> <kbd class="px-1 rounded bg-slate-800 border border-slate-700 text-slate-400">&darr;</kbd> Navigate</span>
-          <span><kbd class="px-1 rounded bg-slate-800 border border-slate-700 text-slate-400">&crarr;</kbd> Select</span>
-        </div>
-        <span>Quick Palette</span>
+      <div class="p-3 bg-[#0F1016] border-t border-[#262833] flex items-center justify-between text-[11px] font-mono text-neutral-500">
+        <span><kbd class="px-1 py-0.5 rounded bg-neutral-900 border border-neutral-800">↑</kbd> <kbd class="px-1 py-0.5 rounded bg-neutral-900 border border-neutral-800">↓</kbd> to navigate</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-neutral-900 border border-neutral-800">Enter</kbd> to select</span>
+        <span><kbd class="px-1.5 py-0.5 rounded bg-neutral-900 border border-neutral-800">Esc</kbd> to dismiss</span>
       </div>
+
     </div>
   </div>
 
-  <!-- B. CASE STUDY & PROJECT TIME MACHINE MODAL -->
-  <div id="case-study-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md hidden">
-    <div class="case-study-dialog w-full max-w-3xl max-h-[90vh] rounded-3xl bg-[#090d18] border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col">
+  <!-- CASE STUDY & PROJECT TIME MACHINE MODAL -->
+  <div id="case-study-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md hidden" aria-modal="true" role="dialog">
+    <div class="case-study-dialog w-full max-w-4xl max-h-[90vh] card-charcoal border border-[#262833] shadow-2xl flex flex-col overflow-hidden">
       
       <!-- Modal Header -->
-      <div class="p-6 border-b border-slate-800 flex items-start justify-between gap-4 bg-slate-900/50">
+      <div class="p-6 border-b border-[#262833] flex items-start justify-between bg-[#111218]">
         <div>
-          <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 font-semibold">Deep Dive Case Study</span>
-          <h2 id="cs-title" class="font-display font-extrabold text-2xl text-white mt-1">Project Title</h2>
-          <p id="cs-tagline" class="text-xs font-mono text-slate-400 mt-0.5">Project Tagline</p>
+          <span class="text-xs font-mono text-[#A5FF50] uppercase tracking-widest">Architectural Case Study</span>
+          <h3 id="cs-title" class="font-display font-bold text-2xl sm:text-3xl text-white mt-1">Project Title</h3>
+          <p id="cs-tagline" class="text-xs sm:text-sm text-neutral-400 mt-1 font-mono">Tagline summary</p>
         </div>
-        <button type="button" id="case-study-close-btn" class="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors" aria-label="Close modal">
+        <button type="button" id="case-study-close-btn" class="w-9 h-9 rounded-xl bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white flex items-center justify-center transition-colors">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
 
       <!-- Modal Body (Scrollable) -->
-      <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm leading-relaxed text-slate-300">
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-8 flex-1">
         
-        <!-- PROJECT TIME MACHINE INTERACTIVE SECTION -->
-        <div class="p-5 rounded-2xl bg-slate-950/80 border border-cyan-500/30 space-y-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-clock-rotate-left text-cyan-400 text-sm"></i>
-              <h4 class="font-display font-bold text-white text-sm">Project Time Machine</h4>
-            </div>
-            <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Evolution Stages</span>
+        <!-- Interactive Project Time Machine -->
+        <div class="p-5 rounded-2xl bg-[#0F1016] border border-[#262833]">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-[#A5FF50] uppercase tracking-widest flex items-center gap-1.5">
+              <i class="fa-solid fa-clock-rotate-left"></i> Project Time Machine
+            </span>
+            <span class="text-[11px] font-mono text-neutral-500">Interactive Evolution</span>
           </div>
 
-          <!-- Time Machine Stage Buttons -->
-          <div id="cs-timemachine-stages" class="flex flex-wrap gap-2"></div>
+          <!-- Stage Switcher Buttons -->
+          <div id="cs-timemachine-stages" class="flex flex-wrap gap-2 mb-4"></div>
 
-          <!-- Time Machine Stage Detail Container -->
+          <!-- Stage Detail Output -->
           <div id="cs-timemachine-detail"></div>
         </div>
 
-        <!-- Problem & Idea -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-            <span class="text-[10px] font-mono text-rose-400 uppercase tracking-wider font-semibold">The Problem</span>
-            <p id="cs-problem" class="text-xs text-slate-300"></p>
+        <!-- Problem Statement & The Idea -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-5 rounded-2xl bg-[#111218] border border-[#262833]">
+            <h4 class="font-display font-bold text-sm text-rose-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+              <i class="fa-solid fa-triangle-exclamation text-xs"></i> The Problem
+            </h4>
+            <p id="cs-problem" class="text-xs sm:text-sm text-neutral-300 leading-relaxed"></p>
           </div>
-          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-            <span class="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-semibold">The Idea</span>
-            <p id="cs-idea" class="text-xs text-slate-300"></p>
+
+          <div class="p-5 rounded-2xl bg-[#111218] border border-[#262833]">
+            <h4 class="font-display font-bold text-sm text-[#A5FF50] uppercase tracking-wider mb-2 flex items-center gap-2">
+              <i class="fa-solid fa-lightbulb text-xs"></i> The Solution &amp; Idea
+            </h4>
+            <p id="cs-idea" class="text-xs sm:text-sm text-neutral-300 leading-relaxed"></p>
           </div>
         </div>
 
-        <!-- Approach -->
-        <div class="space-y-2">
-          <h4 class="font-display font-bold text-white text-sm">Architectural Approach</h4>
-          <p id="cs-approach" class="text-xs sm:text-sm text-slate-400 leading-relaxed"></p>
+        <!-- Engineering Approach -->
+        <div>
+          <h4 class="font-display font-bold text-base text-white mb-2">Architectural Approach</h4>
+          <p id="cs-approach" class="text-xs sm:text-sm text-neutral-300 leading-relaxed"></p>
         </div>
 
         <!-- Technologies Used -->
-        <div class="space-y-2">
-          <h4 class="font-display font-bold text-white text-sm">Technologies Deployed</h4>
+        <div>
+          <h4 class="font-display font-bold text-base text-white mb-3">Technologies &amp; Libraries</h4>
           <div id="cs-tech-tags" class="flex flex-wrap gap-2"></div>
         </div>
 
         <!-- Challenges & Solutions -->
-        <div class="space-y-2">
-          <h4 class="font-display font-bold text-white text-sm">Key Engineering Challenges &amp; Solutions</h4>
-          <ul id="cs-challenges-list" class="space-y-2"></ul>
+        <div>
+          <h4 class="font-display font-bold text-base text-white mb-3">Technical Challenges &amp; Overcomes</h4>
+          <ul id="cs-challenges-list" class="space-y-3"></ul>
         </div>
 
-        <!-- Results / Outcomes -->
-        <div class="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 space-y-1">
-          <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-wider font-semibold">Verified Outcomes</span>
-          <p id="cs-results" class="text-xs text-emerald-200"></p>
+        <!-- Outcomes -->
+        <div class="p-5 rounded-2xl bg-[#111218] border border-[#262833]">
+          <h4 class="font-display font-bold text-sm text-[#A5FF50] uppercase tracking-wider mb-2 flex items-center gap-2">
+            <i class="fa-solid fa-flag-checkered text-xs"></i> Results &amp; Impact
+          </h4>
+          <p id="cs-results" class="text-xs sm:text-sm text-neutral-300 leading-relaxed"></p>
         </div>
 
       </div>
 
-      <!-- Modal Footer (Verified Links) -->
-      <div class="p-5 bg-slate-950/90 border-t border-slate-800 flex items-center justify-between gap-4">
-        <a id="cs-live-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary !py-2 !px-4 text-xs">
-          <span>Launch Webhost</span>
-          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-        </a>
-        <a id="cs-repo-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-4 text-xs">
-          <i class="fa-brands fa-github text-sm"></i>
-          <span>View Source on GitHub</span>
-        </a>
+      <!-- Modal Footer -->
+      <div class="p-5 bg-[#111218] border-t border-[#262833] flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <a id="cs-live-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-lime text-xs font-mono font-bold">
+            <i class="fa-solid fa-rocket text-[11px]"></i>
+            <span>Launch Webhost</span>
+          </a>
+          <a id="cs-repo-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary text-xs font-mono">
+            <i class="fa-brands fa-github text-sm"></i>
+            <span>View Source Code</span>
+          </a>
+        </div>
+        <span class="text-[11px] font-mono text-neutral-500">Press Esc to dismiss</span>
       </div>
 
     </div>
   </div>
 
-  <!-- C. INTERACTIVE TERMINAL MODAL -->
-  <div id="terminal-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md hidden">
-    <div class="terminal-window w-full max-w-2xl rounded-2xl bg-[#070b14] border border-cyan-500/40 shadow-2xl overflow-hidden flex flex-col font-mono text-xs">
+  <!-- INTERACTIVE TERMINAL WINDOW (RETRO-MODERN CLI) -->
+  <div id="terminal-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md hidden" aria-modal="true" role="dialog">
+    <div class="terminal-window w-full max-w-3xl card-charcoal border border-[#262833] shadow-2xl flex flex-col overflow-hidden h-[540px]">
       
-      <!-- Terminal Header -->
-      <div class="p-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between text-slate-400">
+      <!-- Terminal Titlebar -->
+      <div class="p-3.5 bg-[#111218] border-b border-[#262833] flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-red-500"></span>
-          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-          <span class="ml-2 text-slate-300 font-semibold text-[11px]">karthik@portfolio-cli: ~ (bash)</span>
+          <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-[#A5FF50]"></span>
+          <span class="text-xs font-mono text-neutral-400 ml-2">karthik@klh-cse: ~</span>
         </div>
-        <div class="flex items-center gap-3">
-          <button type="button" id="term-clear-btn" class="hover:text-white text-[11px] text-slate-400">clear</button>
-          <button type="button" id="term-close-btn" class="hover:text-white text-sm" aria-label="Close terminal">&times;</button>
+        <div class="flex items-center gap-2">
+          <button type="button" id="term-clear-btn" class="px-2 py-0.5 rounded text-[10px] font-mono bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white">Clear</button>
+          <button type="button" id="term-close-btn" class="w-6 h-6 rounded flex items-center justify-center text-neutral-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-xs"></i>
+          </button>
         </div>
       </div>
 
       <!-- Terminal Output Scroll Area -->
-      <div id="term-output" class="p-4 sm:p-6 h-80 overflow-y-auto space-y-2 text-slate-300">
-        <div class="text-cyan-400 font-bold mb-2">Welcome to Sai Karthik's Interactive Terminal v2.8</div>
-        <div class="text-slate-400 text-[11px] mb-3">Type <code class="text-cyan-300 font-bold">help</code> to list available commands. Try 'projects', 'about', or 'coffee'.</div>
+      <div id="term-output" class="p-4 sm:p-6 font-mono text-xs overflow-y-auto flex-1 bg-[#0A0B10] text-neutral-300 space-y-2">
+        <div class="text-[#A5FF50] font-bold">Raskas Sai Karthik - Interactive Terminal [v3.0.0]</div>
+        <div class="text-neutral-500">Type <span class="text-white font-bold">'help'</span> to see available commands or <span class="text-white font-bold">'projects'</span> to list repos.</div>
       </div>
 
       <!-- Terminal Input Line -->
-      <div class="p-3 bg-slate-950/90 border-t border-slate-800 flex items-center gap-2">
-        <span class="text-cyan-400 font-bold">karthik@klh-cse:~$</span>
+      <div class="p-3 bg-[#111218] border-t border-[#262833] flex items-center gap-2">
+        <span class="text-[#A5FF50] font-bold">karthik@klh-cse:~$</span>
         <input type="text" id="term-input" autocomplete="off" spellcheck="false" class="flex-1 bg-transparent text-white focus:outline-none font-mono text-xs">
-        <span class="term-cursor text-cyan-400 font-bold">&block;</span>
+        <span class="term-cursor text-[#A5FF50] font-bold">&block;</span>
       </div>
 
     </div>
   </div>
 
   <!-- Interactive Toast Notification -->
-  <div id="toast-notification" class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-slate-900/95 border border-cyan-500/50 shadow-2xl backdrop-blur-xl text-white">
-    <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-sm">
+  <div id="toast-notification" class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#17181E] border border-[#A5FF50]/60 shadow-2xl backdrop-blur-xl text-white">
+    <div class="w-8 h-8 rounded-full bg-[#A5FF50]/20 border border-[#A5FF50]/40 flex items-center justify-center text-[#A5FF50] text-sm">
       <i class="fa-solid fa-check"></i>
     </div>
     <div>
       <h4 class="font-display font-bold text-sm text-white">Notification</h4>
-      <p id="toast-message" class="text-xs text-slate-400">Action completed successfully.</p>
+      <p id="toast-message" class="text-xs text-neutral-400">Action completed successfully.</p>
     </div>
   </div>
 
@@ -1532,6 +1464,7 @@
   <!-- 2. Interactive Feature Modules -->
   <script src="js/modules/command-palette.js"></script>
   <script src="js/modules/case-study-modal.js"></script>
+  <script src="js/modules/skills-module.js"></script>
   <script src="js/modules/playground.js"></script>
   <script src="js/modules/terminal.js"></script>
   <script src="js/modules/path-selector.js"></script>
