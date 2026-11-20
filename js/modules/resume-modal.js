@@ -153,14 +153,106 @@
       }, 200);
     };
 
-    // Print Handler
+    // Bulletproof Active Blob File Downloader
+    const downloadResumePdf = async (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+
+      if (window.showPortfolioToast) {
+        window.showPortfolioToast('Downloading Karthik_Resume.pdf (ATS-friendly PDF)...');
+      }
+
+      const pathsToTry = [
+        'public/resume.pdf',
+        'resume.pdf',
+        './public/resume.pdf',
+        './resume.pdf'
+      ];
+
+      let downloaded = false;
+
+      for (const path of pathsToTry) {
+        try {
+          const resp = await fetch(path);
+          if (resp.ok) {
+            const blob = await resp.blob();
+            // Force application/pdf blob download with specific filename
+            const pdfBlob = new Blob([blob], { type: 'application/pdf' });
+            const blobUrl = window.URL.createObjectURL(pdfBlob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = blobUrl;
+            a.download = 'Karthik_Resume.pdf';
+            a.setAttribute('download', 'Karthik_Resume.pdf');
+            document.body.appendChild(a);
+            a.click();
+
+            setTimeout(() => {
+              if (document.body.contains(a)) document.body.removeChild(a);
+              window.URL.revokeObjectURL(blobUrl);
+            }, 2000);
+
+            downloaded = true;
+            if (window.showPortfolioToast) {
+              window.showPortfolioToast('Karthik_Resume.pdf downloaded successfully!');
+            }
+            break;
+          }
+        } catch (err) {
+          console.warn('Blob fetch failed for', path, err);
+        }
+      }
+
+      // Fallback if fetch is blocked (e.g., file:// protocol or offline restrictions)
+      if (!downloaded) {
+        const fallbackA = document.createElement('a');
+        fallbackA.style.display = 'none';
+        fallbackA.href = 'public/resume.pdf';
+        fallbackA.download = 'Karthik_Resume.pdf';
+        fallbackA.setAttribute('download', 'Karthik_Resume.pdf');
+        fallbackA.target = '_blank';
+        fallbackA.rel = 'noopener noreferrer';
+        document.body.appendChild(fallbackA);
+        fallbackA.click();
+        setTimeout(() => {
+          if (document.body.contains(fallbackA)) document.body.removeChild(fallbackA);
+        }, 1000);
+      }
+    };
+
+    // Print Handler with clean white-sheet layout
     const printResume = () => {
-      window.print();
+      renderResumeContent();
+
+      const wasHidden = modal.classList.contains('hidden');
+      if (wasHidden) {
+        modal.classList.remove('hidden');
+        modal.classList.add('modal-active');
+      }
+
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'visible';
+
+      if (window.showPortfolioToast) {
+        window.showPortfolioToast('Opening Print Dialog...');
+      }
+
+      // Small tick to allow styles to settle
+      setTimeout(() => {
+        window.print();
+        setTimeout(() => {
+          document.body.style.overflow = prevOverflow;
+          if (wasHidden) {
+            modal.classList.remove('modal-active');
+            modal.classList.add('hidden');
+          }
+        }, 800);
+      }, 150);
     };
 
     window.openResumeModal = openResume;
     window.closeResumeModal = closeResume;
     window.printResume = printResume;
+    window.downloadResumePdf = downloadResumePdf;
 
     // Attach click listeners to all open resume buttons
     document.querySelectorAll('.open-resume-btn, .open-resume-modal').forEach(btn => {
@@ -170,8 +262,15 @@
       });
     });
 
+    // Attach click listeners to all print buttons
+    document.querySelectorAll('#resume-print-btn, .resume-print-btn, #resume-section-print-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        printResume();
+      });
+    });
+
     if (closeBtn) closeBtn.addEventListener('click', closeResume);
-    if (printBtn) printBtn.addEventListener('click', printResume);
 
     // Backdrop click
     modal.addEventListener('click', (e) => {
@@ -185,12 +284,10 @@
       }
     });
 
-    // Subtle feedback on download
-    downloadBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (window.showPortfolioToast) {
-          window.showPortfolioToast('Downloading Karthik_Resume.pdf (ATS-friendly PDF)...');
-        }
+    // Wire all download buttons to active blob downloader
+    document.querySelectorAll('a[download="Karthik_Resume.pdf"], #resume-download-btn, .download-resume-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        downloadResumePdf(e);
       });
     });
   };

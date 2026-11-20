@@ -653,21 +653,122 @@ body.page-loaded .hero-reveal[data-hero-delay="7"] { transition-delay: 740ms; }
 }
 
 @media print {
-  body * {
-    visibility: hidden;
+  /* Reset document for clean white paper printing */
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-  #resume-paper-container, #resume-paper-container * {
-    visibility: visible;
+
+  /* Hide entire page structure except the resume modal */
+  body > *:not(#resume-viewer-modal) {
+    display: none !important;
   }
+
+  /* Reset modal overlay so it is no longer fixed or dark */
+  #resume-viewer-modal {
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    inset: auto !important;
+    z-index: auto !important;
+  }
+
+  #resume-viewer-modal .resume-dialog {
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide modal header with controls and modal footer */
+  #resume-viewer-modal .resume-dialog > div:first-child,
+  #resume-viewer-modal .resume-dialog > div:last-child {
+    display: none !important;
+  }
+
+  /* Ensure modal body does not constrain height or scroll */
+  #resume-viewer-modal .overflow-y-auto,
+  #resume-viewer-modal [class*="overflow-y-auto"] {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* The printable paper sheet */
   #resume-paper-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    border: none;
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #resume-paper-container * {
+    visibility: visible !important;
+    color: #111111 !important;
+  }
+
+  #resume-paper-container a {
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+
+  /* Prevent page breaks inside critical elements */
+  #resume-paper-container > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  #terminal-modal,
+  #case-study-modal,
+  #toast-notification,
+  #command-palette-backdrop,
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  @page {
+    size: letter;
+    margin: 10mm 12mm;
   }
 }
 
