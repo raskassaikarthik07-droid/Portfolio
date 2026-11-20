@@ -86,6 +86,13 @@
         return;
       }
 
+      if (cleanCmd === 'resume') {
+        printOutput(cmd, `Opening ATS Resume Viewer & Curriculum Vitae...`);
+        closeTerminal();
+        if (window.openResumeModal) window.openResumeModal();
+        return;
+      }
+
       if (cleanCmd === 'time-machine') {
         printOutput(cmd, `Opening Project Time Machine...`);
         closeTerminal();

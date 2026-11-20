@@ -36,6 +36,11 @@
       { title: "Project: SkyBook Flight Booking", category: "Projects", icon: "fa-solid fa-plane", action: () => window.open('https://github.com/raskassaikarthik07-droid/flight', '_blank') },
       { title: "Project: Space Mission Control", category: "Projects", icon: "fa-solid fa-shuttle-space", action: () => window.open('https://github.com/raskassaikarthik07-droid/Space-mission-control', '_blank') },
 
+      // Resume Actions
+      { title: "View Resume (Curriculum Vitae)", category: "Resume", icon: "fa-solid fa-file-lines", action: () => window.openResumeModal && window.openResumeModal() },
+      { title: "Download Resume PDF (Karthik_Resume.pdf)", category: "Resume", icon: "fa-solid fa-download", action: () => downloadResume() },
+      { title: "Open Resume PDF in New Tab", category: "Resume", icon: "fa-solid fa-arrow-up-right-from-square", action: () => window.open('public/resume.pdf', '_blank') },
+
       // Interactive Tools
       { title: "Open Interactive Terminal (CLI)", category: "Tools", icon: "fa-solid fa-terminal", action: () => window.openTerminal && window.openTerminal() },
       { title: "Send Direct Email", category: "Actions", icon: "fa-solid fa-paper-plane", action: () => window.location.href = 'mailto:raskas.saikarthik07@gmail.com' },
@@ -43,6 +48,16 @@
       { title: "Visit GitHub Profile", category: "External", icon: "fa-brands fa-github", action: () => window.open('https://github.com/raskassaikarthik07-droid', '_blank') },
       { title: "Visit LinkedIn Profile", category: "External", icon: "fa-brands fa-linkedin", action: () => window.open('https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/', '_blank') }
     ];
+
+    const downloadResume = () => {
+      const a = document.createElement('a');
+      a.href = 'public/resume.pdf';
+      a.download = 'Karthik_Resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      if (window.showPortfolioToast) window.showPortfolioToast('Downloading Karthik_Resume.pdf...');
+    };
 
     const copyEmail = () => {
       if (navigator.clipboard) {

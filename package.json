@@ -1,0 +1,11 @@
+{
+  "name": "raskas-sai-karthik-portfolio",
+  "version": "3.1.0",
+  "description": "Interactive developer portfolio for Raskas Sai Karthik",
+  "scripts": {
+    "generate-resume": "python scripts/generate_resume_pdf.py",
+    "serve": "python -m http.server 8000"
+  },
+  "author": "Raskas Sai Karthik",
+  "license": "MIT"
+}

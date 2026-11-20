@@ -627,7 +627,52 @@ body.page-loaded .hero-reveal[data-hero-delay="7"] { transition-delay: 740ms; }
 }
 
 /* --------------------------------------------------------------------------
-   13. PLAYGROUND LAB & UTILITIES
+   13. RESUME VIEWER MODAL & PRINT STYLES
+   -------------------------------------------------------------------------- */
+#resume-viewer-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, visibility;
+}
+
+#resume-viewer-modal.modal-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#resume-viewer-modal.modal-active .resume-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.resume-dialog {
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #resume-paper-container, #resume-paper-container * {
+    visibility: visible;
+  }
+  #resume-paper-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   14. PLAYGROUND LAB & UTILITIES
    -------------------------------------------------------------------------- */
 .playground-canvas-wrapper {
   touch-action: none;

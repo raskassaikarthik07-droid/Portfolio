@@ -551,6 +551,7 @@ const PORTFOLIO_DATA = {
   about         - Learn about Sai Karthik's background and focus
   projects      - List all 6 verified GitHub projects and live webhosts
   skills        - Display core technical capabilities and languages
+  resume        - View ATS-friendly resume and download PDF
   contact       - Get direct email, LinkedIn, and GitHub links
   journey       - View educational milestones and current academic standing
   whoami        - Display visitor identity and system diagnostic info
@@ -559,6 +560,13 @@ const PORTFOLIO_DATA = {
   clear         - Clear the terminal screen
   sudo          - [Restricted admin command]
   coffee        - Brew an instant developer coffee`,
+
+    resume: `Resume: Raskas Sai Karthik
+===========================
+Education: B.Tech CSE @ KL University Hyderabad (Roll: 2510030295)
+Academic Distinction: 89% (Intermediate MPC) | 9.7 GPA (SSC)
+PDF Location: public/resume.pdf (Download as Karthik_Resume.pdf)
+Type 'resume' or click 'Resume ↗' in the navbar to open the full viewer.`,
 
     about: `Raskas Sai Karthik
 ==================

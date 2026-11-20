@@ -91,7 +91,7 @@
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-7 font-medium text-xs font-mono uppercase tracking-wider text-neutral-400">
+      <nav class="hidden lg:flex items-center gap-6 font-medium text-xs font-mono uppercase tracking-wider text-neutral-400">
         <a href="#hero" class="nav-link py-1">Home</a>
         <a href="#about" class="nav-link py-1">About</a>
         <a href="#projects" class="nav-link py-1">Projects</a>
@@ -99,12 +99,21 @@
         <a href="#playground" class="nav-link py-1 text-white hover:text-[#A5FF50] transition-colors">
           <i class="fa-solid fa-flask mr-1 text-[10px] text-[#A5FF50]"></i>Playground
         </a>
+        <a href="#resume" class="nav-link py-1 open-resume-modal text-[#A5FF50] hover:underline flex items-center gap-1 font-bold">
+          <span>Resume ↗</span>
+        </a>
         <a href="#journey" class="nav-link py-1">Journey</a>
         <a href="#contact" class="nav-link py-1">Contact</a>
       </nav>
 
-      <!-- Action Controls (Command Palette & Terminal) -->
+      <!-- Action Controls (Command Palette, Resume & Terminal) -->
       <div class="hidden sm:flex items-center gap-2.5">
+        <!-- Resume Trigger Pill -->
+        <button type="button" class="open-resume-btn px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-[#A5FF50] text-xs font-mono flex items-center gap-1.5 transition-all shadow-sm" title="View Resume">
+          <i class="fa-solid fa-file-lines text-[11px]"></i>
+          <span>Resume ↗</span>
+        </button>
+
         <!-- Command Palette Trigger Pill -->
         <button type="button" class="open-palette-btn px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-neutral-300 hover:text-white text-xs font-mono flex items-center gap-2 transition-all shadow-sm">
           <i class="fa-solid fa-magnifying-glass text-[#A5FF50] text-[11px]"></i>
@@ -113,7 +122,7 @@
         </button>
 
         <!-- Interactive Terminal Trigger -->
-        <button type="button" class="open-terminal-btn px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-[#A5FF50] text-xs font-mono flex items-center gap-1.5 transition-all shadow-sm" title="Toggle Interactive Terminal (Ctrl + ~)">
+        <button type="button" class="open-terminal-btn px-3 py-1.5 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-neutral-300 hover:text-[#A5FF50] text-xs font-mono flex items-center gap-1.5 transition-all shadow-sm" title="Toggle Interactive Terminal (Ctrl + ~)">
           <i class="fa-solid fa-terminal text-[11px]"></i>
           <span>CLI</span>
         </button>
@@ -127,6 +136,9 @@
 
       <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-2 lg:hidden">
+        <button type="button" class="open-resume-btn text-[#A5FF50] p-2 rounded-lg" aria-label="View Resume">
+          <i class="fa-solid fa-file-lines text-base"></i>
+        </button>
         <button type="button" class="open-palette-btn text-neutral-300 p-2 rounded-lg" aria-label="Open Command Palette">
           <i class="fa-solid fa-magnifying-glass text-base"></i>
         </button>
@@ -146,6 +158,10 @@
         <a href="#playground" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800 flex items-center justify-between">
           <span>Playground (Curiosity Labs)</span>
           <span class="px-2 py-0.5 rounded text-[10px] bg-[#A5FF50]/20 text-[#A5FF50] font-mono">Interactive</span>
+        </a>
+        <a href="#resume" class="mobile-nav-link open-resume-modal text-[#A5FF50] hover:text-white py-2 border-b border-neutral-800 flex items-center justify-between font-bold">
+          <span>Resume &bull; Curriculum Vitae</span>
+          <span class="px-2 py-0.5 rounded text-[10px] bg-[#A5FF50]/20 text-[#A5FF50] font-mono">PDF ↗</span>
         </a>
         <a href="#journey" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2 border-b border-neutral-800">Journey Timeline</a>
         <a href="#contact" class="mobile-nav-link text-neutral-300 hover:text-[#A5FF50] py-2">Direct Contact</a>
@@ -215,6 +231,10 @@
             <span>Explore Projects</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+          <button type="button" class="open-resume-btn btn-charcoal magnetic-target text-sm text-[#A5FF50] border-[#262833] hover:border-[#A5FF50]">
+            <i class="fa-solid fa-file-lines text-xs"></i>
+            <span>Resume ↗</span>
+          </button>
           <button type="button" class="open-terminal-btn btn-charcoal magnetic-target text-sm">
             <i class="fa-solid fa-terminal text-[#A5FF50] text-xs"></i>
             <span>Interactive CLI</span>
@@ -1026,7 +1046,89 @@
   </section>
 
   <!-- =========================================================================
-       8. JOURNEY TIMELINE (EDITORIAL MILESTONES + ACID LIME MARKERS)
+       8. RESUME & CREDENTIALS SECTION ("MORE ABOUT WHAT I DO")
+       ========================================================================= -->
+  <section id="resume" class="py-20 px-6 md:px-12 relative border-t border-[#262833] bg-[#0E0F16]">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="scroll-reveal card-charcoal p-8 sm:p-12 relative overflow-hidden border border-[#262833]">
+        <!-- Subtle Decorative Corner Glow -->
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-[#A5FF50]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="lg:col-span-8 space-y-4">
+            <div class="inline-flex items-center gap-2 font-mono text-xs text-[#A5FF50] uppercase tracking-widest">
+              <span class="w-2.5 h-[2px] bg-[#A5FF50]"></span> Verified Curriculum Vitae
+            </div>
+            
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              More about what I do.
+            </h2>
+            
+            <p class="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+              Want a closer look at my background, skills, and projects? Explore my resume or download a copy.
+            </p>
+
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <!-- Action 1: View Resume Modal -->
+              <button type="button" class="open-resume-btn btn-lime text-xs font-mono font-bold flex items-center gap-2">
+                <i class="fa-solid fa-file-lines text-xs"></i>
+                <span>View Resume</span>
+              </button>
+
+              <!-- Action 2: Download PDF (downloads as Karthik_Resume.pdf) -->
+              <a href="public/resume.pdf" download="Karthik_Resume.pdf" id="resume-download-btn" class="btn-charcoal text-xs font-mono font-semibold flex items-center gap-2 hover:border-[#A5FF50]">
+                <i class="fa-solid fa-download text-xs text-[#A5FF50]"></i>
+                <span>Download Resume PDF</span>
+              </a>
+
+              <!-- Action 3: Open in New Tab -->
+              <a href="public/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-charcoal text-xs font-mono text-neutral-400 hover:text-white flex items-center gap-1.5">
+                <span>Open in New Tab</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[#A5FF50]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Preview Snapshot Pill / Card -->
+          <div class="lg:col-span-4 flex justify-center lg:justify-end">
+            <div class="p-5 rounded-2xl bg-[#111218] border border-[#262833] w-full max-w-sm space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between pb-2 border-b border-[#262833]">
+                <span class="text-neutral-400">ATS Format:</span>
+                <span class="text-[#A5FF50] font-bold">1-Page ATS Standard</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-400">Candidate:</span>
+                <span class="text-white">Raskas Sai Karthik</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-400">Target Role:</span>
+                <span class="text-neutral-300">Software &amp; Systems Intern</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-neutral-400">Verification:</span>
+                <span class="text-emerald-400 flex items-center gap-1">
+                  <i class="fa-solid fa-circle-check text-[10px]"></i> 100% Authentic Data
+                </span>
+              </div>
+              <div class="pt-2">
+                <button type="button" class="open-resume-btn w-full py-2 rounded-xl bg-[#17181E] border border-[#262833] hover:border-[#A5FF50] text-[#A5FF50] text-center font-bold transition-all block">
+                  Click to Expand Preview ↗
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. JOURNEY TIMELINE (EDITORIAL MILESTONES + ACID LIME MARKERS)
        ========================================================================= -->
   <section id="journey" class="py-24 px-6 md:px-12 relative border-t border-[#262833]">
     <div class="max-w-7xl mx-auto">
@@ -1408,6 +1510,69 @@
     </div>
   </div>
 
+  <!-- RESUME VIEWER MODAL (ACCESSIBLE DOCUMENT VIEWER) -->
+  <div id="resume-viewer-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md hidden" aria-modal="true" role="dialog" aria-labelledby="resume-modal-title">
+    <div class="resume-dialog w-full max-w-4xl max-h-[92vh] card-charcoal border border-[#262833] shadow-2xl flex flex-col rounded-3xl overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-[#262833] flex items-center justify-between bg-[#111218]">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-[#17181E] border border-[#262833] flex items-center justify-center text-[#A5FF50]">
+            <i class="fa-solid fa-file-lines text-xs"></i>
+          </div>
+          <div>
+            <h3 id="resume-modal-title" class="font-display font-bold text-base sm:text-lg text-white">Raskas Sai Karthik &mdash; Resume</h3>
+            <p class="text-[11px] font-mono text-neutral-400">ATS-Friendly Document &bull; Verified Academic &amp; Engineering Credentials</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Download Button -->
+          <a href="public/resume.pdf" download="Karthik_Resume.pdf" class="btn-lime !py-1.5 !px-3 text-xs font-mono font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-download text-xs"></i>
+            <span class="hidden sm:inline">Download PDF</span>
+          </a>
+
+          <!-- Open in New Tab -->
+          <a href="public/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-1.5 !px-3 text-xs font-mono flex items-center gap-1.5">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[#A5FF50]"></i>
+            <span class="hidden sm:inline">New Tab</span>
+          </a>
+
+          <!-- Print Button -->
+          <button type="button" id="resume-print-btn" class="btn-secondary !py-1.5 !px-3 text-xs font-mono hidden md:flex items-center gap-1.5" title="Print Resume">
+            <i class="fa-solid fa-print text-xs"></i>
+            <span>Print</span>
+          </button>
+
+          <!-- Close Modal -->
+          <button type="button" id="resume-close-btn" class="w-8 h-8 rounded-xl bg-[#17181E] border border-[#262833] text-neutral-400 hover:text-white flex items-center justify-center transition-colors" aria-label="Close Resume Viewer (Esc)">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body: High-fidelity Document Paper Rendering -->
+      <div class="p-4 sm:p-6 overflow-y-auto flex-1 bg-[#0A0B10]">
+        
+        <div id="resume-paper-container" class="bg-white text-[#111111] p-6 sm:p-10 rounded-2xl shadow-xl border border-[#D5D5D5] max-w-3xl mx-auto space-y-6 font-sans text-xs sm:text-sm">
+          <!-- Populated from RESUME_DATA by js/modules/resume-modal.js -->
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-3.5 bg-[#111218] border-t border-[#262833] flex items-center justify-between text-[11px] font-mono text-neutral-500">
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#A5FF50]"></span>
+          <span>Source: <code class="text-neutral-400">src/data/resume.ts</code> &bull; Generates <code class="text-neutral-400">public/resume.pdf</code></span>
+        </span>
+        <span>Press <kbd class="px-1.5 py-0.5 rounded bg-[#17181E] border border-neutral-800 text-neutral-300">Esc</kbd> to close</span>
+      </div>
+
+    </div>
+  </div>
+
   <!-- INTERACTIVE TERMINAL WINDOW (RETRO-MODERN CLI) -->
   <div id="terminal-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md hidden" aria-modal="true" role="dialog">
     <div class="terminal-window w-full max-w-3xl card-charcoal border border-[#262833] shadow-2xl flex flex-col overflow-hidden h-[540px]">
@@ -1460,10 +1625,12 @@
        ========================================================================= -->
   <!-- 1. Centralized Single Source of Truth Data -->
   <script src="data/portfolio-data.js"></script>
+  <script src="data/resume-data.js"></script>
 
   <!-- 2. Interactive Feature Modules -->
   <script src="js/modules/command-palette.js"></script>
   <script src="js/modules/case-study-modal.js"></script>
+  <script src="js/modules/resume-modal.js"></script>
   <script src="js/modules/skills-module.js"></script>
   <script src="js/modules/playground.js"></script>
   <script src="js/modules/terminal.js"></script>
