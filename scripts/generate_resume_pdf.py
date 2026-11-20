@@ -125,54 +125,51 @@ def generate_pdf():
         story.append(Paragraph("Computer Science Engineering Undergraduate &bull; Systems &amp; Software Builder", title_style))
         
         contact_line = (
-            "Hyderabad, Telangana, India &bull; "
+            "Hyderabad, India &bull; "
+            "<b>Phone:</b> +91 9494681618 &bull; "
             "<b>Email:</b> raskas.saikarthik07@gmail.com &bull; "
             "<b>LinkedIn:</b> linkedin.com/in/raskas-sai-karthik-7b3746378 &bull; "
-            "<b>GitHub:</b> github.com/raskassaikarthik07-droid &bull; "
-            "<b>Portfolio:</b> raskassaikarthik07-droid.github.io/Portfolio"
+            "<b>GitHub:</b> github.com/raskassaikarthik07-droid"
         )
         story.append(Paragraph(contact_line, contact_style))
-        story.append(HRFlowable(width="100%", thickness=1.2, color=COLOR_ACCENT, spaceAfter=4))
+        story.append(HRFlowable(width="100%", thickness=1.2, color=COLOR_ACCENT, spaceAfter=3.5))
 
         # 2. PROFESSIONAL SUMMARY
-        story.append(Paragraph("SUMMARY", section_heading_style))
-        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2.5))
+        story.append(Paragraph("CAREER OBJECTIVE &amp; SUMMARY", section_heading_style))
+        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2))
         summary_text = (
-            "Performance-driven Computer Science Engineering undergraduate at KL University, Hyderabad (Roll No: 2510030295). "
-            "Hands-on experience developing full-stack web platforms, browser-based computer vision kinematics, and deterministic "
-            "pure Java object-oriented data structures. Proven academic record with 89% in Intermediate (MPC) and a 9.7/10 GPA in SSC. "
-            "Seeking Summer 2025/2026 Software Engineering and Distributed Systems Internships."
+            "Second-year Computer Science Engineering student at KL University (CGPA: 9.6, Roll: 2510030295) passionate about "
+            "technology and problem-solving. Proficient in Java, C, Python, Machine Learning, front-end development, data analysis, and AI tools. "
+            "Enthusiastic about learning new technologies, building practical solutions, and turning ideas into impactful software."
         )
         story.append(Paragraph(summary_text, body_style))
 
         # 3. EDUCATION
         story.append(Paragraph("EDUCATION", section_heading_style))
-        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2.5))
+        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2))
 
         # KL University
         story.append(Paragraph("<b>KL University (Koneru Lakshmaiah Education Foundation)</b> &mdash; Hyderabad, India", item_header_style))
-        story.append(Paragraph("Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering &bull; <i>ID: 2510030295</i> <font color='#666666'>| Jun 2025 &ndash; Present</font>", item_sub_style))
-        story.append(Paragraph("&bull; <b>Relevant Coursework:</b> Data Structures &amp; Algorithms, Object-Oriented Programming (Java), Relational &amp; Vector Databases, Operating Systems, IoT &amp; Microcontrollers.", bullet_style))
+        story.append(Paragraph("B.Tech in Computer Science &amp; Engineering &bull; <b>CGPA: 9.6</b> &bull; <i>Roll: 2510030295</i> <font color='#666666'>| Jun 2025 &ndash; Present</font>", item_sub_style))
+        story.append(Paragraph("&bull; <b>Relevant Coursework:</b> Data Structures &amp; Algorithms, Object-Oriented Programming (Java), Machine Learning, Relational &amp; Vector Databases, Operating Systems.", bullet_style))
 
         # Narayana
         story.append(Paragraph("<b>Narayana Junior College</b> &mdash; Hyderabad, India", item_header_style))
-        story.append(Paragraph("Board of Intermediate Education (MPC) &bull; <b>Academic Distinction: 89%</b> <font color='#666666'>| 2023 &ndash; 2025</font>", item_sub_style))
-        story.append(Paragraph("&bull; Rigorous training in higher Mathematics (Calculus, Linear Algebra), Physics, and Chemistry quantitative problem-solving.", bullet_style))
+        story.append(Paragraph("Board of Intermediate Education (MPC) &bull; <b>Grade: 89% Distinction</b> <font color='#666666'>| 2023 &ndash; 2025</font>", item_sub_style))
 
         # Little Flower
         story.append(Paragraph("<b>Little Flower High School</b> &mdash; Hyderabad, India", item_header_style))
-        story.append(Paragraph("Secondary School Certificate (SSC) &bull; <b>Grade: 9.7 / 10 GPA (97%)</b> <font color='#666666'>| 2013 &ndash; 2023</font>", item_sub_style))
+        story.append(Paragraph("Secondary School Certificate (SSC) &bull; <b>CGPA: 9.7 / 10 (97%)</b> <font color='#666666'>| 2011 &ndash; 2023</font>", item_sub_style))
 
-        # 4. TECHNICAL SKILLS
-        story.append(Paragraph("TECHNICAL SKILLS", section_heading_style))
-        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2.5))
+        # 4. TECHNICAL & NON-TECHNICAL SKILLS
+        story.append(Paragraph("SKILLS &amp; COMPETENCIES", section_heading_style))
+        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2))
 
         skills_data = [
-            [Paragraph("<b>Programming Languages:</b>", body_style), Paragraph("Java SE / OOP, Python, C / C++, TypeScript, JavaScript (ES6+), SQL", body_style)],
-            [Paragraph("<b>Web &amp; Frontend:</b>", body_style), Paragraph("React 19, Next.js, Tailwind CSS, HTML5 Canvas API, RESTful API Design, FastAPI", body_style)],
-            [Paragraph("<b>Systems &amp; Databases:</b>", body_style), Paragraph("Custom Data Structures (LinkedList, Stack, Queue), MySQL, PostgreSQL, Vector Databases", body_style)],
-            [Paragraph("<b>Tools &amp; Platforms:</b>", body_style), Paragraph("Git, GitHub Pages, Linux / Bash CLI, Docker Basics, Vercel CI/CD, VS Code, Eclipse", body_style)],
-            [Paragraph("<b>Hardware &amp; IoT:</b>", body_style), Paragraph("Arduino IDE, ESP32 Microcontrollers, Sensor Interfacing, Serial Protocols (UART, SPI)", body_style)]
+            [Paragraph("<b>Programming Languages:</b>", body_style), Paragraph("C, Java SE / OOP, Python, TypeScript, JavaScript (ES6+), SQL", body_style)],
+            [Paragraph("<b>Core Competencies:</b>", body_style), Paragraph("Machine Learning (ML), Data Analysis, Basic DSA, Front-End Development, AI Tools &amp; Agentic LLMs", body_style)],
+            [Paragraph("<b>Frameworks &amp; Web:</b>", body_style), Paragraph("React 19, Next.js, Tailwind CSS, HTML5 Canvas API, RESTful APIs, FastAPI", body_style)],
+            [Paragraph("<b>Tools &amp; Non-Technical:</b>", body_style), Paragraph("Git, GitHub Pages, Vercel CI/CD, VS Code &bull; <b>Non-Technical:</b> Communication, Decision Making, Teamwork", body_style)]
         ]
 
         skills_table = Table(skills_data, colWidths=[120, 432])
@@ -187,22 +184,22 @@ def generate_pdf():
 
         # 5. VERIFIED ENGINEERING PROJECTS
         story.append(Paragraph("KEY ENGINEERING PROJECTS", section_heading_style))
-        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2.5))
+        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2))
 
         # Project 1: MovieRecommend
-        story.append(Paragraph("<b>MovieRecommend Platform</b> &bull; <i>TypeScript, React, Next.js, Tailwind CSS, Vercel</i> <font color='#666666'>| movierecommend-pi.vercel.app</font>", item_header_style))
+        story.append(Paragraph("<b>MovieRecommend Platform</b> &bull; <i>TypeScript, React, Next.js, Tailwind CSS</i> <font color='#666666'>| movierecommend-pi.vercel.app</font>", item_header_style))
         story.append(Paragraph("&bull; Built an AI-assisted movie curation engine with instant genre clustering and debounced search, achieving sub-100ms client query latency.", bullet_style))
 
         # Project 2: Structviz
-        story.append(Paragraph("<b>Structviz (Interactive Data Structures Visualizer)</b> &bull; <i>JavaScript, HTML5 Canvas, GitHub Pages</i> <font color='#666666'>| raskassaikarthik07-droid.github.io/Structviz/</font>", item_header_style))
+        story.append(Paragraph("<b>Structviz (Interactive Data Structures Visualizer)</b> &bull; <i>JavaScript, HTML5 Canvas</i> <font color='#666666'>| raskassaikarthik07-droid.github.io/Structviz/</font>", item_header_style))
         story.append(Paragraph("&bull; Engineered an educational visualizer rendering 60fps animations of LIFO stacks, queues, and linked node insertions with frame-by-frame controls.", bullet_style))
 
         # Project 3: RehabVision Physio
-        story.append(Paragraph("<b>RehabVision Physio</b> &bull; <i>TypeScript, Computer Vision Models, Kinematics, GitHub Pages</i> <font color='#666666'>| raskassaikarthik07-droid.github.io/Rehabvision_physio/</font>", item_header_style))
+        story.append(Paragraph("<b>RehabVision Physio</b> &bull; <i>TypeScript, Computer Vision Models, Kinematics</i> <font color='#666666'>| raskassaikarthik07-droid.github.io/Rehabvision_physio/</font>", item_header_style))
         story.append(Paragraph("&bull; Developed an in-browser movement tracker computing joint angle vectors at 30+ fps with a minimal HUD showing posture deviation thresholds.", bullet_style))
 
         # Project 4: Space Mission Control
-        story.append(Paragraph("<b>Space Mission Control</b> &bull; <i>Java SE, Custom Linked Lists, Emergency Stacks, Mission Queues</i> <font color='#666666'>| github.com/raskassaikarthik07-droid/Space-mission-control</font>", item_header_style))
+        story.append(Paragraph("<b>Space Mission Control</b> &bull; <i>Java SE, Custom Linked Lists, Emergency Stacks</i> <font color='#666666'>| github.com/raskassaikarthik07-droid/Space-mission-control</font>", item_header_style))
         story.append(Paragraph("&bull; Implemented zero-dependency two-pointer Linked Lists and LIFO abort stacks in pure Java, passing 100% of telemetry stress-test scenarios.", bullet_style))
 
         # Project 5: SkyBook Flight Booking
@@ -210,15 +207,16 @@ def generate_pdf():
         story.append(Paragraph("&bull; Integrated Amadeus Flight API with multi-leg route parsing, interactive SVG aircraft seat maps, and digital boarding pass generation.", bullet_style))
 
         # Project 6: GreenLeaf Botanical Store
-        story.append(Paragraph("<b>GreenLeaf Botanical Store</b> &bull; <i>JavaScript, CSS3 Grid, LocalStorage, GitHub Pages</i> <font color='#666666'>| raskassaikarthik07-droid.github.io/plants/</font>", item_header_style))
+        story.append(Paragraph("<b>GreenLeaf Botanical Store</b> &bull; <i>JavaScript, CSS3 Grid, LocalStorage</i> <font color='#666666'>| raskassaikarthik07-droid.github.io/plants/</font>", item_header_style))
         story.append(Paragraph("&bull; Engineered responsive botanical plant retail storefront with event-driven cart arithmetic and mobile-first drawer navigation.", bullet_style))
 
         # 6. CERTIFICATIONS & HONORS
         story.append(Paragraph("CERTIFICATIONS &amp; ACADEMIC HONORS", section_heading_style))
-        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2.5))
-        story.append(Paragraph("&bull; <b>AI / ML Virtual Internship &amp; Systems Certification:</b> Industry Virtual Internship Program (2025, Grade: Excellent).", bullet_style))
-        story.append(Paragraph("&bull; <b>Academic Distinction:</b> 89% in Intermediate Board Examination (MPC) &bull; 9.7/10 GPA in Secondary School Certificate (SSC).", bullet_style))
-        story.append(Paragraph("&bull; <b>Verified Engineering Codebases:</b> 6 public repositories on GitHub spanning systems engineering, web apps, and computer vision.", bullet_style))
+        story.append(HRFlowable(width="100%", thickness=0.5, color=COLOR_BORDER, spaceAfter=2))
+        story.append(Paragraph("&bull; <b>Building Agentic AI Applications with Large Language Models:</b> NVIDIA Certified Credential (2025).", bullet_style))
+        story.append(Paragraph("&bull; <b>Data Analytics Job Simulation:</b> Deloitte / Forage Virtual Internship Credential (2025).", bullet_style))
+        story.append(Paragraph("&bull; <b>Intro to Generative AI Studio &bull; ReactJS for Beginners:</b> Verified Technical Certifications (2025).", bullet_style))
+        story.append(Paragraph("&bull; <b>Academic Honors:</b> CGPA: 9.6 at KL University &bull; 89% in Intermediate (MPC) &bull; 9.7/10 GPA in SSC (Little Flower).", bullet_style))
 
         doc.build(story)
         print(f"Generated clean 1-Page ATS resume PDF at: {target} ({os.path.getsize(target)} bytes)")

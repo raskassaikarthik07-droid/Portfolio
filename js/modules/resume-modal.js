@@ -26,6 +26,7 @@
           <p class="font-bold text-xs sm:text-sm text-[#444444] mt-0.5">${data.contact.role}</p>
           <div class="mt-2 text-[11px] sm:text-xs text-[#555555] flex flex-wrap gap-x-3 gap-y-1 font-mono">
             <span>${data.contact.location}</span>
+            ${data.contact.phone ? `<span>&bull;</span><a href="tel:${data.contact.phone.replace(/\s+/g, '')}" class="text-[#111111] font-semibold">${data.contact.phone}</a>` : ''}
             <span>&bull;</span>
             <a href="mailto:${data.contact.email}" class="text-[#111111] underline font-semibold">${data.contact.email}</a>
             <span>&bull;</span>
@@ -85,6 +86,10 @@
             
             <div class="sm:col-span-4 font-bold text-[#111111]">Hardware &amp; IoT:</div>
             <div class="sm:col-span-8 text-[#333333]">${data.skills.hardwareAndIoT.join(', ')}</div>
+            ${data.skills.nonTechnical ? `
+              <div class="sm:col-span-4 font-bold text-[#111111]">Non-Technical Skills:</div>
+              <div class="sm:col-span-8 text-[#333333]">${data.skills.nonTechnical.join(', ')}</div>
+            ` : ''}
           </div>
         </div>
 

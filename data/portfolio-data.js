@@ -9,19 +9,21 @@ const PORTFOLIO_DATA = {
     role: "Computer Science Engineer & Systems Builder",
     headline: "I BUILD THINGS THAT MATTER.",
     subheadline: "Crafting resilient full-stack systems, intelligent computer vision architectures, and interactive visual algorithms.",
-    bio: "Computer Science Engineering student at KL University, Hyderabad (Roll No: 2510030295). Driven by an intense curiosity for distributed systems, applied computer vision, low-latency microservices, and interactive web tools that demystify complex computing concepts.",
+    bio: "Second-year Computer Science Engineering student at KL University, Hyderabad (CGPA: 9.6, Roll No: 2510030295). Passionate about technology, machine learning, data analysis, front-end development, and AI tools. Focused on building practical solutions and turning ideas into useful applications.",
     email: "raskas.saikarthik07@gmail.com",
+    phone: "+91 9494681618",
     github: "https://github.com/raskassaikarthik07-droid",
     githubUsername: "raskassaikarthik07-droid",
     linkedin: "https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/",
     university: "KL University, Hyderabad (KLH)",
     department: "Computer Science & Engineering",
     rollNumber: "2510030295",
+    cgpa: "9.6",
     year: "2025 – 2029 (B.Tech)",
     location: "Hyderabad, Telangana, India",
     statusBadge: "Available for Summer Internships & Research",
     availability: "Immediate / Summer 2025-2026",
-    focus: "Distributed Systems, Computer Vision & Interactive Web Tools",
+    focus: "Machine Learning, Agentic AI, Computer Vision & Interactive Web Systems",
     lastUpdated: "November 2026"
   },
 
@@ -491,13 +493,13 @@ const PORTFOLIO_DATA = {
 
   journey: [
     {
-      year: "2013 – 2023",
+      year: "2011 – 2023",
       title: "Foundational Curiosity & Schooling",
       organization: "Little Flower High School",
       location: "Hyderabad, India",
-      metric: "9.7 / 10 GPA (97%)",
+      metric: "CGPA: 9.7 / 10",
       metricLabel: "Academic Performance",
-      description: "Developed deep fascination with mathematics and early computing logic. Led scholastic science exhibition teams and established lifelong discipline in analytical thinking."
+      description: "Consistent academic distinction and excellence across mathematics, science exhibitions, and scholastic competitions."
     },
     {
       year: "2023 – 2025",
@@ -509,22 +511,22 @@ const PORTFOLIO_DATA = {
       description: "Rigorous immersion in Advanced Mathematics, Physics, and Chemistry. Honed structured quantitative problem-solving and algorithmic deduction that serves as the theoretical bedrock of computer science."
     },
     {
-      year: "June 2025 – Present",
+      year: "Jun 2025 – Present",
       title: "B.Tech in Computer Science & Engineering",
       organization: "KL University, Hyderabad (KLH)",
       location: "Hyderabad, India",
-      metric: "ID: 2510030295",
-      metricLabel: "Active CSE Student",
-      description: "Deep dive into Object-Oriented Programming (Java), Data Structures & Algorithms, Database Systems, Computer Networks, and IoT architecture. Committed to building practical, working engineering projects."
+      metric: "CGPA: 9.6",
+      metricLabel: "Second-Year CSE Student",
+      description: "Second-year Computer Science Engineering student (Roll No: 2510030295) with a 9.6 CGPA. Studying Data Structures & Algorithms, Java OOP, Machine Learning, Data Analysis, and AI tools while building practical applications."
     },
     {
       year: "2025",
-      title: "AI / ML Virtual Internship & Systems Certification",
-      organization: "Industry Virtual Internship Program",
-      location: "Remote / Verified",
-      metric: "Grade: Excellent",
-      metricLabel: "Honors Credential",
-      description: "Completed intensive practical AI & Machine Learning curriculum, exploring computer vision pose tracking which subsequently inspired the architecture of RehabVision."
+      title: "Industry Certifications & Job Simulations",
+      organization: "NVIDIA &bull; Deloitte / Forage &bull; GenAI Studio",
+      location: "Verified Credentials",
+      metric: "4 Certifications",
+      metricLabel: "Industry Credentials",
+      description: "Completed NVIDIA Building Agentic AI with LLMs, Deloitte Data Analytics Job Simulation, Introduction to Generative AI Studio, and ReactJS for Beginners."
     },
     {
       year: "2025 – 2026",
@@ -563,16 +565,19 @@ const PORTFOLIO_DATA = {
 
     resume: `Resume: Raskas Sai Karthik
 ===========================
-Education: B.Tech CSE @ KL University Hyderabad (Roll: 2510030295)
-Academic Distinction: 89% (Intermediate MPC) | 9.7 GPA (SSC)
-PDF Location: public/resume.pdf (Download as Karthik_Resume.pdf)
+Education: 2nd-Year B.Tech CSE @ KL University Hyderabad (Roll: 2510030295)
+Standing:  CGPA: 9.6 | Intermediate: 89% | Little Flower: 9.7 CGPA
+Phone:     +91 9494681618 | Email: raskas.saikarthik07@gmail.com
+Certifications: NVIDIA Agentic AI LLMs, Deloitte Data Analytics, GenAI Studio, ReactJS
+PDF:       public/resume.pdf (Download as Karthik_Resume.pdf)
 Type 'resume' or click 'Resume ↗' in the navbar to open the full viewer.`,
 
     about: `Raskas Sai Karthik
 ==================
-B.Tech Computer Science & Engineering @ KL University, Hyderabad
-Roll Number: 2510030295 | Focus: Distributed Systems, Computer Vision & Interactive Web Tools.
-Passionate about software craftsmanship, clean architecture, and 60fps user experiences.`,
+Second-year Computer Science Engineering student @ KL University, Hyderabad
+Roll Number: 2510030295 | Current CGPA: 9.6
+Skills: Java, C, Python, Machine Learning, Front-end development, Data Analysis, AI Tools.
+Passionate about technology, practical solutions, and turning ideas into useful applications.`,
 
     projects: `Verified GitHub Repositories & Webhosts:
 1. MovieRecommend Platform  -> https://movierecommend-pi.vercel.app [TypeScript/React]
@@ -583,22 +588,23 @@ Passionate about software craftsmanship, clean architecture, and 60fps user expe
 6. Space Mission Control    -> https://github.com/raskassaikarthik07-droid/Space-mission-control [Java DSA]`,
 
     skills: `Technical Core:
-Languages: Java SE, Python, C/C++, TypeScript, JavaScript, SQL
-Frontend:  React, Next.js, HTML5 Canvas, Tailwind CSS, Responsive CSS Grid
-AI / Data: Computer Vision Pose Tracking, Vector Search, Relational DBMS
-Hardware:  ESP32, Arduino, Microcontroller Telemetry
-Workflow:  Git & GitHub, Linux, Vercel, Vite, Eclipse, Docker`,
+Languages:        C, Java, Python, TypeScript, JavaScript (ES6+), SQL
+Competencies:     Machine Learning (ML), Data Analysis, Basic DSA, Front-End Dev
+AI & Tools:       AI Tools & Generative AI, Agentic LLMs, Git/GitHub, Vercel, VS Code
+Hardware:         ESP32, Arduino, Sensor Telemetry
+Non-Technical:    Communication, Decision Making, Teamwork`,
 
     contact: `Direct Communication:
+Phone:    +91 9494681618
 Email:    raskas.saikarthik07@gmail.com
 LinkedIn: https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/
 GitHub:   https://github.com/raskassaikarthik07-droid
 Campus:   KL University, Hyderabad, Telangana, India`,
 
     journey: `Academic Path:
-- KL University Hyderabad: B.Tech CSE (2025–2029) | ID: 2510030295
-- Narayana Junior College: Intermediate MPC | 89% Distinction
-- Little Flower High School: SSC | 9.7 / 10 GPA (97%)`,
+- KL University Hyderabad: B.Tech CSE (2025–2029) | CGPA: 9.6 (Roll: 2510030295)
+- Narayana Junior College: Intermediate MPC (2023–2025) | 89% Distinction
+- Little Flower High School: SSC (2011–2023) | CGPA: 9.7 / 10`,
 
     status: `System Status: ONLINE
 Node: KLH-CSE-NODE-01 | Region: Hyderabad (IST)

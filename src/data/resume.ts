@@ -33,6 +33,7 @@ export interface TechnicalSkills {
   systemsAndDatabases: string[];
   toolsAndPlatforms: string[];
   hardwareAndIoT: string[];
+  nonTechnical?: string[];
 }
 
 export interface ProjectEntry {
@@ -67,6 +68,7 @@ export const resumeData: ResumeData = {
     preferredName: "Karthik",
     role: "Computer Science Engineer & Systems Builder",
     email: "raskas.saikarthik07@gmail.com",
+    phone: "+91 9494681618",
     location: "Hyderabad, Telangana, India",
     linkedin: "https://www.linkedin.com/in/raskas-sai-karthik-7b3746378/",
     github: "https://github.com/raskassaikarthik07-droid",
@@ -74,18 +76,18 @@ export const resumeData: ResumeData = {
   },
 
   summary:
-    "Analytical and performance-driven Computer Science Engineering undergraduate at KL University, Hyderabad (Roll No: 2510030295). Experienced in developing responsive full-stack applications, browser-based computer vision kinematics, and deterministic Java object-oriented data structures. Proven academic track record with 89% in Intermediate (MPC) and a 9.7/10 GPA in Secondary School. Seeking Summer 2025/2026 Software Engineering and Distributed Systems Internships.",
+    "I am a second-year Computer Science Engineering student passionate about technology and problem-solving. I have skills in Java, C, Python, Machine Learning, front-end development, data analysis, and AI tools. I enjoy learning new technologies, building practical solutions, and turning ideas into useful projects. My goal is to gain real-world experience and grow as a skilled technology professional.",
 
   education: [
     {
       institution: "KL University (Koneru Lakshmaiah Education Foundation)",
       degree: "B.Tech in Computer Science & Engineering (Roll No: 2510030295)",
-      duration: "June 2025 – Present",
+      duration: "Jun 2025 – Present",
       location: "Hyderabad, India",
-      scoreOrGrade: "Active B.Tech CSE Undergraduate",
+      scoreOrGrade: "CGPA: 9.6",
       details: [
-        "Core Coursework: Data Structures & Algorithms, Object-Oriented Programming (Java), Relational & Vector Databases, Computer Networks, IoT & Microcontroller Architecture.",
-        "Engineering Focus: High-performance browser computing, microservices, and applied computer vision telemetry."
+        "Second-year Computer Science Engineering undergraduate specializing in practical software systems.",
+        "Core Coursework: Data Structures & Algorithms, Object-Oriented Programming (Java), Machine Learning, Relational & Vector Databases, Operating Systems."
       ]
     },
     {
@@ -93,29 +95,30 @@ export const resumeData: ResumeData = {
       degree: "Board of Intermediate Education (Mathematics, Physics, Chemistry - MPC)",
       duration: "2023 – 2025",
       location: "Hyderabad, India",
-      scoreOrGrade: "Academic Distinction: 89%",
+      scoreOrGrade: "Grade: 89%",
       details: [
-        "Intensive curriculum in higher-level calculus, classical mechanics, physical chemistry, and quantitative analytical problem-solving."
+        "Intensive curriculum in higher-level calculus, physics, chemistry, and quantitative analytical problem-solving."
       ]
     },
     {
       institution: "Little Flower High School",
       degree: "Secondary School Certificate (SSC)",
-      duration: "2013 – 2023",
+      duration: "2011 – 2023",
       location: "Hyderabad, India",
-      scoreOrGrade: "Academic Score: 9.7 / 10 GPA (97%)",
+      scoreOrGrade: "CGPA: 9.7 / 10",
       details: [
-        "Graduated with distinction; demonstrated consistent excellence in mathematics, physical sciences, and science exhibition symposiums."
+        "Graduated with distinction; consistent excellence in mathematics, science exhibitions, and scholastic competitions."
       ]
     }
   ],
 
   skills: {
-    languages: ["Java SE", "Python", "C / C++", "TypeScript", "JavaScript (ES6+)", "SQL"],
-    frameworksAndWeb: ["React 19", "Next.js", "Tailwind CSS", "HTML5 Canvas", "RESTful APIs", "FastAPI"],
-    systemsAndDatabases: ["Data Structures & Algorithms", "OOP Design Patterns", "MySQL", "PostgreSQL", "Vector Databases"],
-    toolsAndPlatforms: ["Git", "GitHub & GitHub Pages", "Linux CLI / Bash", "Docker Basics", "Vercel CI/CD", "Eclipse IDE", "VS Code"],
-    hardwareAndIoT: ["Arduino IDE", "ESP32 Microcontrollers", "Analog/Digital Sensor Telemetry", "Serial Protocols (UART / SPI)"]
+    languages: ["C", "Java", "Python", "TypeScript", "JavaScript (ES6+)", "SQL"],
+    frameworksAndWeb: ["Front-end Development", "React 19", "Next.js", "Tailwind CSS", "HTML5 Canvas", "RESTful APIs", "FastAPI"],
+    systemsAndDatabases: ["Data Structures & Algorithms (Basic DSA)", "Machine Learning (ML)", "Data Analysis", "OOP Design Patterns", "MySQL", "Vector Databases"],
+    toolsAndPlatforms: ["AI Tools & Generative AI", "Agentic LLMs", "Git & GitHub", "Linux CLI / Bash", "Vercel", "VS Code", "Eclipse"],
+    hardwareAndIoT: ["Arduino IDE", "ESP32 Microcontrollers", "Sensor Telemetry"],
+    nonTechnical: ["Communication", "Decision Making", "Teamwork"]
   },
 
   projects: [
@@ -193,11 +196,32 @@ export const resumeData: ResumeData = {
 
   certifications: [
     {
-      title: "AI / ML Virtual Internship & Systems Certification",
-      issuer: "Industry Virtual Internship Program",
+      title: "Building Agentic AI Applications with Large Language Models",
+      issuer: "NVIDIA",
       date: "2025",
-      credential: "Grade: Excellent",
-      description: "Completed intensive practical curriculum in supervised machine learning, model evaluation, and computer vision pose tracking."
+      credential: "NVIDIA Verified Credential",
+      description: "Trained on enterprise agentic architectures, function calling, vector retrieval, and autonomous multi-agent orchestration."
+    },
+    {
+      title: "Data Analytics Job Simulation",
+      issuer: "Deloitte / Forage",
+      date: "2025",
+      credential: "Simulation Credential",
+      description: "Practical telemetry analysis, dashboard architecture, business intelligence, and predictive data modeling."
+    },
+    {
+      title: "Introduction to Generative AI Studio",
+      issuer: "Generative AI Studio",
+      date: "2025",
+      credential: "Certified Completion",
+      description: "Foundation models, prompt tuning, semantic embeddings, and multimodal application workflows."
+    },
+    {
+      title: "ReactJS for Beginners",
+      issuer: "Technical Certification",
+      date: "2025",
+      credential: "Verified Completion",
+      description: "Component hierarchy, state and effect lifecycles, virtual DOM rendering, and single-page web applications."
     }
   ]
 };
